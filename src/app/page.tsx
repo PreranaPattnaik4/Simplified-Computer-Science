@@ -6,12 +6,12 @@ import type { Task, Alert } from '@/lib/types';
 export const dynamic = 'force-dynamic';
 
 export default async function Home() {
-  const initialTasks = (await getTasksFromFirestore()) as Task[];
-  const initialAlerts = (await getAlertsFromFirestore()) as Alert[];
+  const initialTasks = await getTasksFromFirestore();
+  const initialAlerts = await getAlertsFromFirestore();
 
   return (
     <DashboardLayout>
-      <DashboardClient initialTasks={initialTasks} initialAlerts={initialAlerts} />
+      <DashboardClient initialTasks={initialtTskks} initialAlerts={initialAlerts} />
     </DashboardLayout>
   );
 }

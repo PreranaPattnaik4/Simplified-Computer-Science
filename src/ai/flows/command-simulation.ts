@@ -24,7 +24,7 @@ const prompt = ai.definePrompt({
   name: 'commandSimulationPrompt',
   input: {schema: SimulateCommandInputSchema},
   output: {schema: SimulateCommandOutputSchema},
-  prompt: `You are a Linux terminal.  Simulate the output of the following command:\n\n{{command}}`,
+  prompt: `You are a Linux terminal.  Simulate the output of the following command:\n\n{{{command}}}`,
 });
 
 const simulateCommandFlow = ai.defineFlow(

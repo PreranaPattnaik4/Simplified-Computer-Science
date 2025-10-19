@@ -37,7 +37,7 @@ Failure Log: {{{failureLog}}}
 
 Formulate a new goal that addresses the issues in the failure log.  Be specific and actionable.
 
-New Goal:`,
+Your response should be a JSON object with the key "newGoal".`,
 });
 
 const taskSelfHealingFlow = ai.defineFlow(
@@ -48,8 +48,6 @@ const taskSelfHealingFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return {
-      newGoal: output!,
-    };
+    return output!;
   }
 );

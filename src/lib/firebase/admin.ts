@@ -20,17 +20,29 @@ if (!admin.apps.length) {
         privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
     };
 
-    admin.initializeApp({
-      credential: serviceAccount.projectId && serviceAccount.clientEmail && serviceAccount.privateKey 
-        ? admin.credential.cert(serviceAccount) 
-        : admin.credential.applicationDefault(), // Fallback to default credentials in GCP environment
-    });
+    if (serviceAccount.projectId && serviceAccount.clientEmail && serviceAccount.privateKey) {
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount)
+        });
+    } else if (process.env.NODE_ENV === 'production') {
+        // Fallback to default credentials in a production GCP environment
+        admin.initializeApp();
+    } else {
+        // In dev, if credentials are not set, we don't initialize.
+        // This will cause errors downstream, but it prevents the app from crashing on start.
+        console.warn('Firebase Admin SDK not initialized. Missing credentials.');
+    }
   } catch (error) {
     console.error('Firebase admin initialization error', error);
-    // If initialization fails, we might not want to proceed.
-    // For now, we'll log the error and let the app crash on db access,
-    // which is the current behavior.
   }
 }
 
-export const db = admin.firestore();
+// Only export db if an app is initialized
+let db;
+if (admin.apps.length > 0) {
+  db = admin.firestore();
+} else {
+  db = null;
+}
+
+export { db };

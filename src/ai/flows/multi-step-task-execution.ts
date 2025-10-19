@@ -38,9 +38,7 @@ const prompt = ai.definePrompt({
 
 Goal: {{{goal}}}
 
-Break down the above goal into a series of steps:
-
-{{#zod description=MultiStepTaskExecutionOutputSchema}}`,
+Break down the above goal into a series of steps. Your response should be a JSON object with the original goal and an array of steps.`,
 });
 
 const multiStepTaskExecutionFlow = ai.defineFlow(
@@ -51,6 +49,6 @@ const multiStepTaskExecutionFlow = ai.defineFlow(
   },
   async input => {
     const {output} = await prompt(input);
-    return output!;
+    return { ...output!, originalGoal: input.goal };
   }
 );

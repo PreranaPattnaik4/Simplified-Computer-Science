@@ -11,6 +11,7 @@ const REPORTS_COLLECTION = 'reports';
 // --- Task Functions ---
 
 export async function createTaskInFirestore(goal: string, steps: { description: string }[]): Promise<string> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const new_steps: Step[] = steps.map(step => ({ ...step, status: 'pending' }));
   const docRef = await db.collection(TASKS_COLLECTION).add({
     goal,
@@ -22,6 +23,7 @@ export async function createTaskInFirestore(goal: string, steps: { description: 
 }
 
 export async function getTaskFromFirestore(taskId: string): Promise<Task | null> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const doc = await db.collection(TASKS_COLLECTION).doc(taskId).get();
   if (!doc.exists) return null;
   
@@ -34,6 +36,10 @@ export async function getTaskFromFirestore(taskId: string): Promise<Task | null>
 }
 
 export async function getTasksFromFirestore(): Promise<Task[]> {
+  if (!db) {
+    console.error("Firestore is not initialized, returning mock data");
+    return mockTasks.map((t, i) => ({...t, id: `mock-task-${i}`, createdAt: new Date().toISOString()} as Task));
+  }
   try {
     const snapshot = await db.collection(TASKS_COLLECTION).orderBy('createdAt', 'desc').get();
     if (snapshot.empty) {
@@ -54,6 +60,7 @@ export async function getTasksFromFirestore(): Promise<Task[]> {
 }
 
 export async function updateTaskStatusInFirestore(taskId: string, status: TaskStatus, failureLog?: string): Promise<void> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const updateData: { status: TaskStatus, failureLog?: string } = { status };
   if (failureLog) {
     updateData.failureLog = failureLog;
@@ -62,6 +69,7 @@ export async function updateTaskStatusInFirestore(taskId: string, status: TaskSt
 }
 
 export async function updateStepStatusInFirestore(taskId: string, stepIndex: number, status: TaskStatus, log?: string): Promise<void> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const taskRef = db.collection(TASKS_COLLECTION).doc(taskId);
   const taskDoc = await taskRef.get();
   if (!taskDoc.exists) throw new Error('Task not found');
@@ -76,6 +84,10 @@ export async function updateStepStatusInFirestore(taskId: string, stepIndex: num
 // --- Alert Functions ---
 
 export async function getAlertsFromFirestore(): Promise<Alert[]> {
+  if (!db) {
+    console.error("Firestore is not initialized, returning mock data");
+    return mockAlerts.map((a, i) => ({...a, id: `mock-alert-${i}`, timestamp: new Date().toISOString()} as Alert));
+  }
   try {
     const snapshot = await db.collection(ALERTS_COLLECTION).orderBy('timestamp', 'desc').get();
     if(snapshot.empty) {
@@ -96,12 +108,14 @@ export async function getAlertsFromFirestore(): Promise<Alert[]> {
 }
 
 export async function updateAlertStatusInFirestore(alertId: string, status: 'resolved'): Promise<void> {
+    if (!db) throw new Error("Firestore is not initialized.");
     await db.collection(ALERTS_COLLECTION).doc(alertId).update({ status });
 }
 
 // --- Report Functions ---
 
 export async function saveReportToFirestore(taskId: string, content: string): Promise<string> {
+    if (!db) throw new Error("Firestore is not initialized.");
     const reportRef = await db.collection(REPORTS_COLLECTION).add({
         taskId,
         content,
@@ -115,6 +129,7 @@ export async function saveReportToFirestore(taskId: string, content: string): Pr
 // --- Functions for Conversational RCA Tool ---
 
 export async function getTasksByStatus(status: string): Promise<Partial<Task>[]> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const snapshot = await db.collection(TASKS_COLLECTION).where('status', '==', status).get();
   return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
@@ -129,6 +144,7 @@ export async function getSystemHealth(): Promise<SystemHealth> {
 }
 
 export async function getRcaReportSummary(taskId: string): Promise<string> {
+  if (!db) throw new Error("Firestore is not initialized.");
   const reportQuery = await db.collection(REPORTS_COLLECTION).where('taskId', '==', taskId).limit(1).get();
   if (reportQuery.empty) {
     return 'No RCA report found for this task.';
