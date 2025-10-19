@@ -23,10 +23,13 @@ if (!admin.apps.length) {
     admin.initializeApp({
       credential: serviceAccount.projectId && serviceAccount.clientEmail && serviceAccount.privateKey 
         ? admin.credential.cert(serviceAccount) 
-        : undefined, // Fallback to default credentials in GCP environment
+        : admin.credential.applicationDefault(), // Fallback to default credentials in GCP environment
     });
   } catch (error) {
     console.error('Firebase admin initialization error', error);
+    // If initialization fails, we might not want to proceed.
+    // For now, we'll log the error and let the app crash on db access,
+    // which is the current behavior.
   }
 }
 

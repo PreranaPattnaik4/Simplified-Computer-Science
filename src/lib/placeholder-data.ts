@@ -1,22 +1,19 @@
-import { Timestamp } from 'firebase-admin/firestore';
 import type { Alert, Task } from './types';
 
-export const mockAlerts: Omit<Alert, 'id'>[] = [
+export const mockAlerts: Omit<Alert, 'id' | 'timestamp'>[] = [
   {
     title: 'High CPU on Cache Server',
     description: 'CPU utilization has exceeded 95% for the last 15 minutes on server `cache-01`.',
-    timestamp: Timestamp.now(),
     status: 'new',
   },
   {
     title: 'Database Connection Pool Exhausted',
     description: 'The primary database `pg-main-master` has run out of available connections.',
-    timestamp: Timestamp.fromDate(new Date(Date.now() - 1000 * 60 * 30)),
     status: 'new',
   },
 ];
 
-export const mockTasks: Omit<Task, 'id'>[] = [
+export const mockTasks: Omit<Task, 'id' | 'createdAt'>[] = [
     {
         goal: 'Deploy latest web application update to production',
         steps: [
@@ -28,7 +25,6 @@ export const mockTasks: Omit<Task, 'id'>[] = [
             { description: 'Restart production servers', status: 'pending' },
         ],
         status: 'in-progress',
-        createdAt: Timestamp.now(),
     },
     {
         goal: 'Reboot staging database server',
@@ -39,7 +35,6 @@ export const mockTasks: Omit<Task, 'id'>[] = [
         ],
         status: 'failed',
         failureLog: 'Permission denied when issuing reboot command. User `automation-agent` may not have sudo privileges.',
-        createdAt: Timestamp.fromDate(new Date(Date.now() - 1000 * 60 * 60 * 2)), // 2 hours ago
     },
     {
         goal: 'Backup user database',
@@ -50,6 +45,5 @@ export const mockTasks: Omit<Task, 'id'>[] = [
           { description: 'Upload to S3 cold storage', status: 'completed', log: 'Upload complete.' },
         ],
         status: 'completed',
-        createdAt: Timestamp.fromDate(new Date(Date.now() - 1000 * 60 * 60 * 24)), // 1 day ago
     }
 ];

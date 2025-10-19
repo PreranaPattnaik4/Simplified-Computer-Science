@@ -1,3 +1,4 @@
+
 import { db } from './firebase/admin';
 import { FieldValue, Timestamp } from 'firebase-admin/firestore';
 import type { Task, Alert, Report, Step, TaskStatus, SystemHealth } from './types';
@@ -6,31 +7,6 @@ import { mockAlerts, mockTasks } from './placeholder-data';
 const TASKS_COLLECTION = 'tasks';
 const ALERTS_COLLECTION = 'alerts';
 const REPORTS_COLLECTION = 'reports';
-
-// Function to seed initial data (for demo purposes)
-export async function seedInitialData() {
-  const tasksSnapshot = await db.collection(TASKS_COLLECTION).limit(1).get();
-  if (tasksSnapshot.empty) {
-    console.log('Seeding initial tasks...');
-    const batch = db.batch();
-    mockTasks.forEach(task => {
-      const docRef = db.collection(TASKS_COLLECTION).doc();
-      batch.set(docRef, task);
-    });
-    await batch.commit();
-  }
-
-  const alertsSnapshot = await db.collection(ALERTS_COLLECTION).limit(1).get();
-  if (alertsSnapshot.empty) {
-    console.log('Seeding initial alerts...');
-    const batch = db.batch();
-    mockAlerts.forEach(alert => {
-      const docRef = db.collection(ALERTS_COLLECTION).doc();
-      batch.set(docRef, alert);
-    });
-    await batch.commit();
-  }
-}
 
 // --- Task Functions ---
 
@@ -49,26 +25,32 @@ export async function getTaskFromFirestore(taskId: string): Promise<Task | null>
   const doc = await db.collection(TASKS_COLLECTION).doc(taskId).get();
   if (!doc.exists) return null;
   
-  const data = doc.data() as Omit<Task, 'id'>;
-  // Convert Timestamps to ISO strings for serializability
+  const data = doc.data() as Omit<Task, 'id' | 'createdAt'> & { createdAt: Timestamp };
   return {
     id: doc.id,
     ...data,
-    createdAt: (data.createdAt as Timestamp).toDate().toISOString(),
-  } as unknown as Task;
+    createdAt: data.createdAt.toDate().toISOString(),
+  } as Task;
 }
 
 export async function getTasksFromFirestore(): Promise<Task[]> {
-  await seedInitialData();
-  const snapshot = await db.collection(TASKS_COLLECTION).orderBy('createdAt', 'desc').get();
-  return snapshot.docs.map(doc => {
-    const data = doc.data() as Omit<Task, 'id'>;
-    return { 
-        id: doc.id,
-        ...data,
-        createdAt: (data.createdAt as Timestamp).toDate().toISOString(),
-     } as unknown as Task;
-  });
+  try {
+    const snapshot = await db.collection(TASKS_COLLECTION).orderBy('createdAt', 'desc').get();
+    if (snapshot.empty) {
+        return mockTasks.map((t, i) => ({...t, id: `mock-task-${i}`, createdAt: new Date().toISOString()} as Task));
+    }
+    return snapshot.docs.map(doc => {
+      const data = doc.data() as Omit<Task, 'id' | 'createdAt'> & { createdAt: Timestamp };
+      return { 
+          id: doc.id,
+          ...data,
+          createdAt: data.createdAt.toDate().toISOString(),
+       } as Task;
+    });
+  } catch (error) {
+    console.error("Error getting tasks from firestore, returning mock data", error);
+    return mockTasks.map((t, i) => ({...t, id: `mock-task-${i}`, createdAt: new Date().toISOString()} as Task));
+  }
 }
 
 export async function updateTaskStatusInFirestore(taskId: string, status: TaskStatus, failureLog?: string): Promise<void> {
@@ -94,16 +76,23 @@ export async function updateStepStatusInFirestore(taskId: string, stepIndex: num
 // --- Alert Functions ---
 
 export async function getAlertsFromFirestore(): Promise<Alert[]> {
-    await seedInitialData();
+  try {
     const snapshot = await db.collection(ALERTS_COLLECTION).orderBy('timestamp', 'desc').get();
+    if(snapshot.empty) {
+      return mockAlerts.map((a, i) => ({...a, id: `mock-alert-${i}`, timestamp: new Date().toISOString()} as Alert));
+    }
     return snapshot.docs.map(doc => {
-      const data = doc.data() as Omit<Alert, 'id'>;
+      const data = doc.data() as Omit<Alert, 'id' | 'timestamp'> & { timestamp: Timestamp };
       return { 
           id: doc.id,
           ...data,
-          timestamp: (data.timestamp as Timestamp).toDate().toISOString(),
-       } as unknown as Alert;
+          timestamp: data.timestamp.toDate().toISOString(),
+       } as Alert;
     });
+  } catch (error) {
+    console.error("Error getting alerts from firestore, returning mock data", error);
+    return mockAlerts.map((a, i) => ({...a, id: `mock-alert-${i}`, timestamp: new Date().toISOString()} as Alert));
+  }
 }
 
 export async function updateAlertStatusInFirestore(alertId: string, status: 'resolved'): Promise<void> {
@@ -125,9 +114,9 @@ export async function saveReportToFirestore(taskId: string, content: string): Pr
 
 // --- Functions for Conversational RCA Tool ---
 
-export async function getTasksByStatus(status: string): Promise<Task[]> {
+export async function getTasksByStatus(status: string): Promise<Partial<Task>[]> {
   const snapshot = await db.collection(TASKS_COLLECTION).where('status', '==', status).get();
-  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Task));
+  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
 export async function getSystemHealth(): Promise<SystemHealth> {
