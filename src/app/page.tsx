@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <DashboardLayout>
-      <DashboardClient initialTasks={initialtTskks} initialAlerts={initialAlerts} />
+      <DashboardClient initialTasks={initialTasks} initialAlerts={initialAlerts} />
     </DashboardLayout>
   );
 }
