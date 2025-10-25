@@ -9,8 +9,8 @@ const fontSans = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Simplified Computer Science",
-  description: "Your guide to the world of tech.",
+  title: "SCS Simplified Computer Science",
+  description: "Your guide to the world of AI, tech, and computer science.",
 };
 
 export default function RootLayout({
