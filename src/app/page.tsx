@@ -295,28 +295,28 @@ export default function HomePage() {
 
         {/* Section 6: Step-by-Step Career Timeline */}
         <section className="container mx-auto max-w-7xl px-4 py-20">
-            <h2 className="text-center text-4xl font-bold mb-4">Your Path to Success: Step-by-Step Career Timeline</h2>
-            <div className="relative mt-16">
-                <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-border rounded"></div>
+            <h2 className="text-center text-4xl font-bold mb-12">Your Path to Success: Step-by-Step Career Timeline</h2>
+            <div className="relative">
+                <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-1 h-full bg-border rounded"></div>
                 {timelineItems.map((item, index) => (
-                    <div key={index} className={`relative mb-16 flex items-center w-full ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                         {index === 3 && (
-                            <div className="absolute top-[-4rem] left-1/2 -translate-x-1/2 w-full text-center">
+                    <div key={index} className="relative pl-12 md:pl-0 mb-16">
+                        {index === 3 && (
+                            <div className="w-full text-center my-8 md:my-16">
                                 <h3 className="text-2xl font-bold text-accent">Advancing Your Career: From Gaining Experience to Becoming an Industry Expert</h3>
                             </div>
                         )}
-                        <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                            <div className={`p-6 rounded-lg border bg-card shadow-md ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                                <div className={`flex items-center gap-4 mb-2 ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
-                                    <h3 className="text-xl font-bold">{item.title}</h3>
-                                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
-                                        {React.cloneElement(item.icon, { className: "h-6 w-6" })}
-                                    </div>
-                                d</div>
+                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                            <div className={`flex items-center gap-4 mb-4 md:mb-0 ${index % 2 === 0 ? 'md:col-start-2 md:pl-12' : 'md:col-start-1 md:pr-12 md:text-right md:flex-row-reverse'}`}>
+                                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
+                                    {React.cloneElement(item.icon, { className: "h-6 w-6" })}
+                                </div>
+                                <h3 className="text-xl font-bold">{item.title}</h3>
+                            </div>
+                             <div className={`p-6 rounded-lg border bg-card shadow-md ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`}>
                                 <p className="text-muted-foreground">{item.description}</p>
                             </div>
                         </div>
-                        <div className="absolute left-1/2 -translate-x-1/2 h-6 w-6 rounded-full bg-accent border-4 border-background"></div>
+                        <div className="absolute left-0 top-1 -translate-x-1/2 h-6 w-6 rounded-full bg-accent border-4 border-background md:left-1/2"></div>
                     </div>
                 ))}
             </div>
