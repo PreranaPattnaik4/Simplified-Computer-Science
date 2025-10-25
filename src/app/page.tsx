@@ -1,6 +1,7 @@
+'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Menu,
   User,
@@ -76,6 +77,35 @@ const timelineItems = [
 
 
 export default function HomePage() {
+  const [activePanel, setActivePanel] = useState(0);
+
+  const panels = [
+    {
+      id: 0,
+      title: "CAREER TIPS",
+      subtitle: "Roadmaps",
+      image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 1,
+      title: "TRENDING BLOGS",
+      subtitle: "Latest Tech News",
+      image: "https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 2,
+      title: "HACKATHONS",
+      subtitle: "Upcoming Events",
+      image: "https://images.pexels.com/photos/3520665/pexels-photo-3520665.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      id: 3,
+      title: "PROJECTS",
+      subtitle: "Hands-On Experience",
+      image: "https://images.pexels.com/photos/3729557/pexels-photo-3729557.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+  ];
+
   return (
     <div className="bg-background text-foreground">
       {/* Section 1: Header & Hero Section */}
@@ -98,34 +128,73 @@ export default function HomePage() {
       </header>
 
       <main>
-        {/* Hero Image Banner */}
-        <section className="relative h-[500px] w-full">
-          <div className="absolute inset-0 grid grid-cols-6">
-            <div className="relative group overflow-hidden">
-                <Image src="https://picsum.photos/seed/cyberpunk-city/600/800" alt="Cyberpunk cityscape" width={600} height={800} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="cyberpunk cityscape teal blue pink"/>
-            </div>
-            <div className="relative group overflow-hidden">
-                <Image src="https://picsum.photos/seed/woman-vr/600/800" alt="Woman with VR headset" width={600} height={800} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="woman vr cybernetic white"/>
-            </div>
-            <div className="relative col-span-2 group overflow-hidden">
-              <Image src="https://picsum.photos/seed/laptop-typing/800/800" alt="Hands typing on a laptop" width={800} height={800} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="typing hands futuristic office teal"/>
-            </div>
-            <div className="relative grid grid-rows-2">
-                <div className="relative group overflow-hidden">
-                    <Image src="https://picsum.photos/seed/brain-circuit/600/400" alt="Brain made of circuits" width={600} height={400} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="brain circuit light-gray"/>
+        {/* Hero Image Accordion */}
+        <section className="w-full bg-black py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex gap-2 h-64 md:h-80 rounded-lg overflow-hidden">
+                {panels.map((panel) => {
+                    const isActive = activePanel === panel.id;
+                    const baseWidth = 100 / panels.length;
+                    const activeWidth = 65;
+                    const inactiveWidth = (100 - activeWidth) / (panels.length - 1);
+                    const width = isActive ? activeWidth : inactiveWidth;
+
+                    return (
+                    <div
+                        key={panel.id}
+                        className={`relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg flex-1`}
+                        style={{
+                        flex: `${width} 1 auto`,
+                        }}
+                        onClick={() => setActivePanel(panel.id)}
+                        onMouseEnter={() => setActivePanel(panel.id)}
+                    >
+                        <img
+                        src={panel.image}
+                        alt={panel.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                        <div
+                        className={`absolute bottom-0 left-0 right-0 p-6 md:p-8 transition-opacity duration-500 ${
+                            isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
+                        >
+                        <h3 className="text-white text-lg md:text-2xl font-bold uppercase tracking-wider mb-2">
+                            {panel.title}
+                        </h3>
+                        <p className="text-yellow-400 font-semibold text-sm md:text-base uppercase tracking-widest">
+                            {panel.subtitle}
+                        </p>
+                        </div>
+                        {!isActive && (
+                        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 opacity-75 group-hover:opacity-0 transition-opacity duration-300">
+                            <h3 className="text-white text-sm md:text-lg font-bold uppercase tracking-wider truncate">
+                            {panel.title}
+                            </h3>
+                        </div>
+                        )}
+                    </div>
+                    );
+                })}
                 </div>
-                <div className="relative group overflow-hidden">
-                    <Image src="https://picsum.photos/seed/robotic-hand/600/400" alt="Robotic hand" width={600} height={400} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="robot hand white photorealistic"/>
+                <div className="flex justify-center gap-3 mt-8">
+                {panels.map((panel) => (
+                    <button
+                    key={panel.id}
+                    onClick={() => setActivePanel(panel.id)}
+                    className={`h-3 rounded-full transition-all duration-300 ${
+                        activePanel === panel.id
+                        ? "w-8 bg-yellow-400"
+                        : "w-3 bg-gray-600 hover:bg-gray-500"
+                    }`}
+                    aria-label={`Go to ${panel.title}`}
+                    />
+                ))}
                 </div>
             </div>
-            <div className="relative group overflow-hidden">
-                <Image src="https://picsum.photos/seed/nervous-system-2/600/800" alt="Human nervous system schematic" width={600} height={800} className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" data-ai-hint="nervous system schematic teal orange-red"/>
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-            <h2 className="text-5xl font-extrabold text-white">Hackathons and Internships</h2>
-          </div>
         </section>
+
 
         {/* Hero Content */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
@@ -243,7 +312,7 @@ export default function HomePage() {
                                     <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
                                         {React.cloneElement(item.icon, { className: "h-6 w-6" })}
                                     </div>
-                                </div>
+                                d</div>
                                 <p className="text-muted-foreground">{item.description}</p>
                             </div>
                         </div>
