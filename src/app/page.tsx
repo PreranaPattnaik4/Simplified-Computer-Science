@@ -38,6 +38,7 @@ import {
 } from '@/components/ui/accordion';
 import IndustrySolutions from '@/components/IndustrySolutions';
 import TrendingBlogs from '@/components/TrendingBlogs';
+import LimitlessLearning from '@/components/LimitlessLearning';
 
 
 const whatWeOffer = [
@@ -290,39 +291,42 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 5: Industry Solutions */}
+        {/* Section 5: Limitless Learning */}
+        <LimitlessLearning />
+
+        {/* Section 6: Industry Solutions */}
         <IndustrySolutions />
 
-        {/* Section 6: Step-by-Step Career Timeline */}
+        {/* Section 7: Step-by-Step Career Timeline */}
         <section className="container mx-auto max-w-7xl px-4 py-20">
             <h2 className="text-center text-4xl font-bold mb-12">Your Path to Success: Step-by-Step Career Timeline</h2>
             <div className="relative">
-                <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-1 h-full bg-border rounded"></div>
+                <div className="absolute left-6 w-1 h-full bg-border rounded"></div>
                 {timelineItems.map((item, index) => (
-                    <div key={index} className="relative pl-12 md:pl-0 mb-16">
-                        {index === 3 && (
-                            <div className="w-full text-center my-8 md:my-16">
+                    <div key={index} className="relative pl-20 mb-16">
+                         {index === 3 && (
+                            <div className="w-full text-left my-8 md:my-16">
                                 <h3 className="text-2xl font-bold text-accent">Advancing Your Career: From Gaining Experience to Becoming an Industry Expert</h3>
                             </div>
                         )}
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
-                            <div className={`flex items-center gap-4 mb-4 md:mb-0 ${index % 2 === 0 ? 'md:col-start-2 md:pl-12' : 'md:col-start-1 md:pr-12 md:text-right md:flex-row-reverse'}`}>
-                                <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
-                                    {React.cloneElement(item.icon, { className: "h-6 w-6" })}
-                                </div>
-                                <h3 className="text-xl font-bold">{item.title}</h3>
+                        <div className="flex items-start gap-4 mb-4">
+                             <div className="absolute left-6 top-1 -translate-x-1/2 h-6 w-6 rounded-full bg-accent border-4 border-background"></div>
+                            <div className="flex-shrink-0 h-12 w-12 rounded-full bg-secondary flex items-center justify-center text-accent">
+                                {React.cloneElement(item.icon, { className: "h-6 w-6" })}
                             </div>
-                             <div className={`p-6 rounded-lg border bg-card shadow-md ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`}>
-                                <p className="text-muted-foreground">{item.description}</p>
+                            <div>
+                                <h3 className="text-xl font-bold">{item.title}</h3>
+                                <div className="p-6 rounded-lg border bg-card shadow-md mt-2">
+                                    <p className="text-muted-foreground">{item.description}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="absolute left-0 top-1 -translate-x-1/2 h-6 w-6 rounded-full bg-accent border-4 border-background md:left-1/2"></div>
                     </div>
                 ))}
             </div>
         </section>
 
-        {/* Section 7: "What We Offer" Grid */}
+        {/* Section 8: "What We Offer" Grid */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <h2 className="mb-12 text-center text-4xl font-bold">What We Offer</h2>
             <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
@@ -339,7 +343,7 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 8: FAQ Section */}
+        {/* Section 9: FAQ Section */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 <div>
@@ -363,7 +367,7 @@ export default function HomePage() {
             </div>
         </section>
 
-        {/* Section 9: Final Enrollment CTA */}
+        {/* Section 10: Final Enrollment CTA */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <div className="rounded-lg border-l-8 border-accent bg-card p-8 shadow-lg md:p-12 text-center">
                 <h2 className="text-3xl font-bold">Discover the most trending courses in AI, technology, and more! Join now to access these high-demand courses</h2>
@@ -378,7 +382,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      {/* Section 10: Footer */}
+      {/* Section 11: Footer */}
       <footer className="bg-black text-white/80">
         <div className="container mx-auto max-w-7xl px-4 py-16">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
@@ -431,5 +435,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
