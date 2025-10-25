@@ -1,4 +1,4 @@
-import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb } from "lucide-react";
+import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket } from "lucide-react";
 
 export default function CareerTimeline() {
   const steps = [
@@ -27,12 +27,20 @@ export default function CareerTimeline() {
       side: "left",
     },
     {
+      title: "Hackathons & Projects",
+      subtitle: "Apply skills in the real world.",
+      fullTitle: "Participate in Hackathons & Build Real-World Projects",
+      description: "Put your skills to the test by joining hackathons and building projects. This is where theory meets practice. Collaborating with peers on challenging problems sharpens your problem-solving abilities, builds your confidence, and expands your portfolio with tangible proof of your capabilities. It's a crucial step to show employers you can deliver results.",
+      icon: Rocket,
+      side: "right",
+    },
+    {
       title: "Workplace Experience",
       subtitle: "Explore industry exposure.",
       fullTitle: "Join Internships & Gain Real-World Experience",
       description: "Seek internships that align with your career goals. Internships provide valuable hands-on experience, help you network with professionals, and build your industry knowledge. Whether paid or unpaid, internships are a great way to apply the skills you've learned in a real-world setting, improve your resume, and increase your chances of landing a full-time role.",
       icon: Briefcase,
-      side: "right",
+      side: "left",
     },
     {
       title: "Freelancing Platforms",
@@ -40,7 +48,7 @@ export default function CareerTimeline() {
       fullTitle: "Freelancing Opportunities to Showcase Your Skills",
       description: "Take your knowledge beyond the classroom by applying it to real-world scenarios. Freelancing allows you to work on projects for clients, contribute to open-source, or try contract work. These experiences will enhance your portfolio, help you build a professional network, and demonstrate your capability to employers or clients. Freelancing is a great way to gain practical experience, build your personal brand, and start earning while you grow.",
       icon: Code,
-      side: "left",
+      side: "right",
     },
     {
       title: "LinkedIn",
@@ -48,7 +56,7 @@ export default function CareerTimeline() {
       fullTitle: "Create a Powerful LinkedIn Profile That Highlights Your Skills and Certifications",
       description: "LinkedIn is a powerful tool for showcasing your skills, certifications, and professional achievements. To stand out on LinkedIn, make sure your profile includes: a professional headline that clearly reflects your career goals and skills, a detailed summary that highlights your learning journey, skills and certifications related to your career path, and portfolio projects. Networking is key to building career opportunities. Connect with industry professionals, join relevant groups, and actively engage with posts in your field.",
       icon: Linkedin,
-      side: "right",
+      side: "left",
     },
     {
       title: "Job Applications",
@@ -56,7 +64,7 @@ export default function CareerTimeline() {
       fullTitle: "Apply for Jobs with Confidence and Stand Out to Employers",
       description: "Now that you've built a strong skill set, earned certificates, and gained real-world experience, it's time to apply for jobs. Tailor your resume and cover letter to highlight the most relevant skills. Leverage your LinkedIn profile, highlight your portfolio, prepare for interviews, and be persistent. By approaching job applications with confidence and a well-crafted personal brand, you'll be prepared to impress employers and take the next step toward your career goals.",
       icon: FileText,
-      side: "left",
+      side: "right",
     },
     {
       title: "Lifelong Learning",
@@ -64,7 +72,7 @@ export default function CareerTimeline() {
       fullTitle: "Embrace Lifelong Learning to Reach New Career Heights",
       description: "In the fast-evolving world of technology, staying on top of industry trends and continuously upgrading your skills is crucial. Stay updated with the latest trends and technologies. Enroll in specialized courses and workshops. Read industry-related blogs, attend webinars, and engage with thought leaders. Lifelong learning is the key to adapting to new challenges and positioning yourself for long-term success.",
       icon: Lightbulb,
-      side: "right",
+      side: "left",
     },
   ];
 
