@@ -2,12 +2,10 @@
 import { BookOpen, Award, User, ShoppingCart, Star, HelpCircle, Settings, LogOut, FileText, Bell, DollarSign, Rocket, BarChartHorizontal, Laptop } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 const sidebarNavItems = [
     { title: 'Dashboard', href: '/dashboard', icon: Laptop },
-    { title: 'My Profile', href: '#', icon: User },
+    { title: 'My Profile', href: '/profile', icon: User },
     { title: 'Enrolled Courses', href: '#', icon: BookOpen },
     { title: 'Reviews', href: '#', icon: Star },
     { title: 'My Quiz Attempts', href: '#', icon: BarChartHorizontal },
@@ -41,8 +39,6 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <Header />
       <div className="flex min-h-screen bg-gray-50/50">
         <aside className="w-64 flex-shrink-0 border-r bg-white p-4 flex flex-col">
           <div className="flex flex-col items-center mb-8">
@@ -80,7 +76,5 @@ export default function DashboardLayout({
           {children}
         </div>
       </div>
-      <Footer />
-    </>
   )
 }

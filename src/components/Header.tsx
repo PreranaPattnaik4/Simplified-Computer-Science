@@ -1,3 +1,4 @@
+
 "use client"
 
 import { Menu, User, Search, HelpCircle } from "lucide-react"
@@ -10,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Button } from "./ui/button"
 
 export default function Header() {
   return (
@@ -58,13 +60,28 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link href="/dashboard" passHref>
-            <User className="h-6 w-6" />
-          </Link>
-          <Link href="/faq" passHref>
-            <HelpCircle className="h-6 w-6" />
-          </Link>
-          <Search className="h-6 w-6" />
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="#">Sign In</Link>
+          </Button>
+          <Button variant="outline" size="sm" asChild>
+            <Link href="#">Sign Up</Link>
+          </Button>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <User className="h-6 w-6" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <Link href="/dashboard" passHref><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
+              <Link href="/profile" passHref><DropdownMenuItem>Profile</DropdownMenuItem></Link>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Log out</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Search className="h-6 w-6 cursor-pointer" />
         </div>
       </div>
     </header>
