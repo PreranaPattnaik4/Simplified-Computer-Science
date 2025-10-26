@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { usePathname } from 'next/navigation';
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -28,10 +29,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontSpaceGrotesk.variable)}>
-        <Header />
-        {children}
-        <Footer />
+        <LayoutWrapper>
+          {children}
+        </LayoutWrapper>
       </body>
     </html>
+  );
+}
+
+// A new wrapper component to conditionally render header and footer
+function LayoutWrapper({ children }: { children: React.ReactNode }) {
+  'use client';
+  const pathname = usePathname();
+  const isLearnPage = pathname.includes('/learn/');
+
+  return (
+    <>
+      {!isLearnPage && <Header />}
+      {children}
+      {!isLearnPage && <Footer />}
+    </>
   );
 }

@@ -22,6 +22,8 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   }
 
   const otherCourses = getCourses().filter(c => c.slug !== params.slug).slice(0, 3);
+  const firstLessonSlug = course.syllabus && course.syllabus[0] && course.syllabus[0].lessons[0] ? course.syllabus[0].lessons[0].slug : '';
+
 
   return (
     <div className="bg-gray-50/50">
@@ -82,10 +84,10 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                       <AccordionTrigger className="text-lg font-semibold font-space-grotesk text-left">{item.title}</AccordionTrigger>
                       <AccordionContent>
                         <ul className="space-y-3 pl-2">
-                          {item.topics.map((topic, topicIndex) => (
-                            <li key={topicIndex} className="flex items-start gap-3 text-muted-foreground">
+                          {item.lessons.map((lesson, lessonIndex) => (
+                            <li key={lessonIndex} className="flex items-start gap-3 text-muted-foreground">
                               <ListChecks className="text-accent mt-1 flex-shrink-0" size={18} />
-                              <span>{topic}</span>
+                              <span>{lesson.title}</span>
                             </li>
                           ))}
                         </ul>
@@ -119,7 +121,9 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 </div>
                 <div className="p-6">
                   <h2 className="text-3xl font-bold mb-4">Free</h2>
-                  <Button className="w-full h-12 text-lg font-bold bg-accent text-accent-foreground hover:bg-yellow-500">Enroll Now</Button>
+                  <Link href={`/learn/${course.slug}/${firstLessonSlug}`} passHref>
+                    <Button className="w-full h-12 text-lg font-bold bg-accent text-accent-foreground hover:bg-yellow-500">Enroll Now</Button>
+                  </Link>
                   <div className="mt-6 space-y-3 text-muted-foreground">
                     <p className="flex items-center gap-3"><Clock size={18} /><span>Approx. 25 hours to complete</span></p>
                     <p className="flex items-center gap-3"><BarChart size={18} /><span>{course.level}</span></p>
