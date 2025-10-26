@@ -66,6 +66,14 @@
   }
 }
 
+@layer components {
+    .bg-pastel-purple-bg { background-color: #E8DFF5; }
+    .bg-pastel-pink-bg { background-color: #FBE9E7; }
+    .bg-pastel-blue-bg { background-color: #E3F2FD; }
+    .bg-pastel-yellow-bg { background-color: #FFF9C4; }
+    .bg-pastel-green-bg { background-color: #E8F5E9; }
+}
+
 @layer base {
   * {
     @apply border-border;

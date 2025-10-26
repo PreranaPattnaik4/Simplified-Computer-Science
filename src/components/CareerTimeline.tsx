@@ -3,7 +3,7 @@ import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb
 export default function CareerTimeline() {
   const steps = [
     {
-      title: "Define Your Career Goal",
+      title: "Career Goal",
       subtitle: "Define your aspirations.",
       fullTitle: "Define Your Career Goal and Plan Your Journey",
       description: "Start by clearly defining your career goals. Whether you want to become a Software Developer, Programmer, Graphic Designer, AI Specialist, Web Developer, or Data Scientist, setting specific goals will help you stay motivated and focused. Once you have your goal, break it down into smaller milestones like learning key skills, completing projects, and earning certifications. Create a study plan that fits your schedule and stick to it.",
@@ -27,28 +27,20 @@ export default function CareerTimeline() {
       side: "left",
     },
     {
-      title: "Hackathons & Projects",
-      subtitle: "Apply skills in the real world.",
-      fullTitle: "Participate in Hackathons & Build Real-World Projects",
-      description: "Put your skills to the test by joining hackathons and building projects. This is where theory meets practice. Collaborating with peers on challenging problems sharpens your problem-solving abilities, builds your confidence, and expands your portfolio with tangible proof of your capabilities. It's a crucial step to show employers you can deliver results.",
-      icon: Rocket,
-      side: "right",
-    },
-    {
       title: "Workplace Experience",
       subtitle: "Explore industry exposure.",
       fullTitle: "Join Internships & Gain Real-World Experience",
       description: "Seek internships that align with your career goals. Internships provide valuable hands-on experience, help you network with professionals, and build your industry knowledge. Whether paid or unpaid, internships are a great way to apply the skills you've learned in a real-world setting, improve your resume, and increase your chances of landing a full-time role.",
       icon: Briefcase,
-      side: "left",
+      side: "right",
     },
-    {
+     {
       title: "Freelancing Platforms",
       subtitle: "Apply your skills in real-world projects.Join the platforms like Upwork, Fiverr, and others",
       fullTitle: "Freelancing Opportunities to Showcase Your Skills",
       description: "Take your knowledge beyond the classroom by applying it to real-world scenarios. Freelancing allows you to work on projects for clients, contribute to open-source, or try contract work. These experiences will enhance your portfolio, help you build a professional network, and demonstrate your capability to employers or clients. Freelancing is a great way to gain practical experience, build your personal brand, and start earning while you grow.",
       icon: Code,
-      side: "right",
+      side: "left",
     },
     {
       title: "LinkedIn",
@@ -56,7 +48,7 @@ export default function CareerTimeline() {
       fullTitle: "Create a Powerful LinkedIn Profile That Highlights Your Skills and Certifications",
       description: "LinkedIn is a powerful tool for showcasing your skills, certifications, and professional achievements. This step emphasizes the importance of optimizing your LinkedIn profile to create a strong personal brand that attracts the attention of potential employers or clients.\n\nTo stand out on LinkedIn, make sure your profile includes:\n\nA professional headline that clearly reflects your career goals and skills.\nA detailed summary that highlights your learning journey, accomplishments, and aspirations.\nSkills and certifications related to your career path to demonstrate your expertise.\nPortfolio projects or work samples that show practical application of your knowledge.\nAdditionally, networking is key to building career opportunities. Connect with industry professionals, join relevant groups, and actively engage with posts and discussions in your field. Regularly share updates about your achievements, projects, and courses to increase visibility and demonstrate your ongoing growth.\n\nUsing LinkedIn effectively can help you establish credibility, build a professional network, and discover new job opportunities or freelance work.",
       icon: Linkedin,
-      side: "left",
+      side: "right",
     },
     {
       title: "Job Applications",
@@ -64,7 +56,7 @@ export default function CareerTimeline() {
       fullTitle: "Apply for Jobs with Confidence and Stand Out to Employers",
       description: "Now that you've built a strong skill set, earned certificates, and gained real-world experience through internships or freelancing, it’s time to apply for jobs. This step is all about showcasing your value to potential employers and confidently navigating the job market.\n\nTo stand out:\n\nTailor Your Resume and Cover Letter: Customize each application to highlight the skills and experiences most relevant to the job.\nLeverage Your LinkedIn Profile: Ensure your profile reflects your skills, certifications, and achievements, and be proactive in connecting with recruiters and professionals in your field.\nHighlight Your Portfolio: Include links to your portfolio or project work, showing tangible evidence of your expertise.\nPrepare for Interviews: Practice common interview questions, focusing on how your unique experiences and self-driven learning make you a great fit for the role.\nBe Persistent: Keep applying to roles and expanding your network. Sometimes the right opportunity takes time to come by, but your persistence will pay off.\nBy approaching job applications with confidence and a well-crafted personal brand, you’ll be prepared to impress employers and take the next step toward your career goals.",
       icon: FileText,
-      side: "right",
+      side: "left",
     },
     {
       title: "Lifelong Learning",
@@ -72,7 +64,7 @@ export default function CareerTimeline() {
       fullTitle: "Embrace Lifelong Learning to Reach New Career Heights",
       description: "In the fast-evolving world of technology, staying on top of industry trends and continuously upgrading your skills is crucial. Embrace the mindset of lifelong learning to unlock new career opportunities and reach your full potential. Whether through advanced courses, certifications, or self-directed learning, ongoing education helps you remain competitive and prepared for future challenges.\n\nStay updated with the latest trends, tools, and technologies in your field.\nEnroll in specialized courses and workshops to deepen your expertise.\nRead industry-related blogs, attend webinars, and engage with thought leaders.\nReflect on your progress and seek areas where you can further improve.\nLifelong learning is the key to adapting to new challenges and positioning yourself for long-term success.",
       icon: Lightbulb,
-      side: "left",
+      side: "right",
     },
   ];
 
@@ -155,7 +147,7 @@ export default function CareerTimeline() {
                   </div>
 
                   {/* Mid-section headline */}
-                  {index === 4 && (
+                  {index === 3 && (
                     <div className="my-16 text-center px-4">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                         Advancing Your Career: From Gaining Experience to Becoming an Industry Expert
