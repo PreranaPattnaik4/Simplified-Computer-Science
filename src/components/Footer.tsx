@@ -13,11 +13,11 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">QUICK LINKS</h3>
             <ul className="space-y-2">
               <li><a href="/" className="hover:text-accent">Home</a></li>
-              <li><a href="#" className="hover:text-accent">About</a></li>
+              <li><a href="/about" className="hover:text-accent">About</a></li>
               <li><a href="/resources" className="hover:text-accent">Resources</a></li>
-              <li><a href="#" className="hover:text-accent">My Profile</a></li>
-              <li><a href="#" className="hover:text-accent">Contact</a></li>
-              <li><a href="#" className="hover:text-accent">FAQ</a></li>
+              <li><a href="/profile" className="hover:text-accent">My Profile</a></li>
+              <li><a href="/contact" className="hover:text-accent">Contact</a></li>
+              <li><a href="/faq" className="hover:text-accent">FAQ</a></li>
             </ul>
           </div>
           <div>
@@ -26,7 +26,7 @@ export default function Footer() {
               <li><a href="/blog" className="hover:text-accent">Blogs</a></li>
               <li><a href="/courses" className="hover:text-accent">Courses Live!</a></li>
               <li><a href="/resources" className="hover:text-accent">Resources</a></li>
-              <li><a href="#" className="hover:text-accent">Services</a></li>
+              <li><a href="/services" className="hover:text-accent">Services</a></li>
             </ul>
           </div>
           <div>
@@ -45,9 +45,9 @@ export default function Footer() {
           <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between px-4 text-sm sm:flex-row">
               <p>&copy; {new Date().getFullYear()} Simplified Computer Science. All Rights Reserved.</p>
               <div className="flex gap-4 mt-4 sm:mt-0">
-                  <a href="#" className="hover:text-accent">Terms and Conditions</a>
-                  <a href="#" className="hover:text-accent">Privacy Policy</a>
-                  <a href="#" className="hover:text-accent">Disclaimer</a>
+                  <a href="/terms" className="hover:text-accent">Terms and Conditions</a>
+                  <a href="/privacy" className="hover:text-accent">Privacy Policy</a>
+                  <a href="/disclaimer" className="hover:text-accent">Disclaimer</a>
               </div>
           </div>
       </div>
