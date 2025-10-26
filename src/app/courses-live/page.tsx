@@ -4,48 +4,173 @@ import Image from 'next/image';
 
 const categories = [
   'Artificial Intelligence',
-  'Development',
-  'WordPress',
+  'Software Development',
+  'Cloud & IT Infrastructure',
+  'Data Science & Analytics',
+  'Cybersecurity',
 ];
 
 const tags = [
-    "AI Applications",
-    "AI Techniques",
-    "Beginner",
-    "Elementor",
-    "GANs"
+    "Python",
+    "JavaScript",
+    "Next.js",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "TensorFlow",
+    "PyTorch",
+    "SQL",
+    "NoSQL",
+    "Network Security",
+    "DevOps",
+    "Algorithms",
+    "UX/UI Design",
 ];
 
 const courses = [
   {
-    title: 'Web Development Fundamentals with Responsive Web Design Essentials',
+    title: 'Advanced AI: Deep Learning with TensorFlow',
+    description: 'Master deep learning concepts and build advanced neural networks using TensorFlow.',
+    level: 'Advanced',
+    primaryCategory: 'Artificial Intelligence',
+    suggestedTags: ['Python', 'TensorFlow', 'PyTorch'],
     image: 'https://picsum.photos/seed/course1/500/300',
-    rating: 0,
-    students: 8,
-    comments: 6,
+    rating: 5,
+    students: 125,
+    comments: 23,
     author: 'Prerana',
-    authorImage: '/scs-logo.png',
-    categories: ['Development', 'WordPress'],
   },
   {
-    title: 'WordPress Website Development for Professionals',
+    title: 'Full-Stack Web Development with Next.js & React',
+    description: 'Build and deploy modern, server-rendered web applications from scratch.',
+    level: 'Intermediate',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['JavaScript', 'Next.js', 'DevOps'],
     image: 'https://picsum.photos/seed/course2/500/300',
-    rating: 0,
-    students: 2,
-    comments: 0,
+    rating: 4,
+    students: 852,
+    comments: 102,
     author: 'Prerana',
-    authorImage: '/scs-logo.png',
-    categories: ['Development', 'WordPress'],
   },
   {
-    title: 'Artificial Intelligence Beginners Guide',
+    title: 'AWS Certified Cloud Practitioner: Exam Prep',
+    description: 'A comprehensive guide to mastering the AWS cloud and passing the CCP exam.',
+    level: 'Beginner',
+    primaryCategory: 'Cloud & IT Infrastructure',
+    suggestedTags: ['AWS', 'DevOps', 'Network Security'],
     image: 'https://picsum.photos/seed/course3/500/300',
-    rating: 0,
-    students: 0,
-    comments: 0,
+    rating: 5,
+    students: 2341,
+    comments: 450,
     author: 'Prerana',
-    authorImage: '/scs-logo.png',
-    categories: ['Artificial Intelligence'],
+  },
+  {
+    title: 'Data Structures & Algorithms in Python',
+    description: 'Strengthen your core computer science fundamentals with practical Python examples.',
+    level: 'Intermediate',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['Python', 'Algorithms'],
+    image: 'https://picsum.photos/seed/course4/500/300',
+    rating: 5,
+    students: 1780,
+    comments: 250,
+    author: 'Prerana',
+  },
+  {
+    title: 'Introduction to Generative AI & Large Language Models',
+    description: 'Explore the fundamentals of generative AI and learn how LLMs are transforming industries.',
+    level: 'Beginner',
+    primaryCategory: 'Artificial Intelligence',
+    suggestedTags: ['Python', 'TensorFlow'],
+    image: 'https://picsum.photos/seed/course5/500/300',
+    rating: 4,
+    students: 950,
+    comments: 120,
+    author: 'Prerana',
+  },
+  {
+    title: 'Docker & Kubernetes: The Complete Guide',
+    description: 'Containerize and orchestrate your applications for scalable and efficient deployments.',
+    level: 'Intermediate',
+    primaryCategory: 'Cloud & IT Infrastructure',
+    suggestedTags: ['Docker', 'Kubernetes', 'DevOps'],
+    image: 'https://picsum.photos/seed/course6/500/300',
+    rating: 5,
+    students: 1150,
+    comments: 180,
+    author: 'Prerana',
+  },
+  {
+    title: 'Cybersecurity Fundamentals: Defending the Digital Frontier',
+    description: 'Learn the core principles of cybersecurity and how to protect systems from threats.',
+    level: 'Beginner',
+    primaryCategory: 'Cybersecurity',
+    suggestedTags: ['Network Security'],
+    image: 'https://picsum.photos/seed/course7/500/300',
+    rating: 4,
+    students: 780,
+    comments: 95,
+    author: 'Prerana',
+  },
+  {
+    title: 'Advanced Natural Language Processing with PyTorch',
+    description: 'Dive deep into NLP techniques and build sophisticated language models with PyTorch.',
+    level: 'Advanced',
+    primaryCategory: 'Artificial Intelligence',
+    suggestedTags: ['Python', 'PyTorch'],
+    image: 'https://picsum.photos/seed/course8/500/300',
+    rating: 5,
+    students: 450,
+    comments: 85,
+    author: 'Prerana',
+  },
+  {
+    title: 'SQL for Data Science: From Beginner to Advanced',
+    description: 'Master the language of data and perform complex queries for insightful analysis.',
+    level: 'Intermediate',
+    primaryCategory: 'Data Science & Analytics',
+    suggestedTags: ['SQL', 'NoSQL'],
+    image: 'https://picsum.photos/seed/course9/500/300',
+    rating: 5,
+    students: 2100,
+    comments: 320,
+    author: 'Prerana',
+  },
+  {
+    title: 'Introduction to UX/UI Design Principles',
+    description: 'Learn the fundamentals of user experience and user interface design to create intuitive products.',
+    level: 'Beginner',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['UX/UI Design'],
+    image: 'https://picsum.photos/seed/course10/500/300',
+    rating: 4,
+    students: 650,
+    comments: 70,
+    author: 'Prerana',
+  },
+  {
+    title: 'Compiler Design & Theory: From Code to Execution',
+    description: 'Understand the inner workings of compilers and how source code is translated into machine code.',
+    level: 'Advanced',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['Algorithms'],
+    image: 'https://picsum.photos/seed/course11/500/300',
+    rating: 5,
+    students: 250,
+    comments: 45,
+    author: 'Prerana',
+  },
+  {
+    title: 'Object-Oriented Design Patterns in JavaScript',
+    description: 'Learn to write scalable, maintainable, and reusable code with proven design patterns.',
+    level: 'Intermediate',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['JavaScript', 'Algorithms'],
+    image: 'https://picsum.photos/seed/course12/500/300',
+    rating: 4,
+    students: 890,
+    comments: 110,
+    author: 'Prerana',
   },
 ];
 
@@ -56,6 +181,7 @@ const CourseCard = ({ course }: { course: typeof courses[0] }) => (
              <div className="absolute top-2 right-2 bg-white p-1.5 rounded-full text-gray-500 hover:text-accent cursor-pointer">
                 <MessageSquare size={16} />
             </div>
+            <div className="absolute top-2 left-2 bg-accent text-accent-foreground text-xs font-bold uppercase px-2 py-1 rounded-md">{course.level}</div>
         </div>
         <div className="p-4">
             <div className="flex items-center mb-2">
@@ -63,7 +189,8 @@ const CourseCard = ({ course }: { course: typeof courses[0] }) => (
                     <Star key={i} size={16} className={i < course.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"} />
                 ))}
             </div>
-            <h3 className="font-bold text-lg mb-3 h-14 line-clamp-2">{course.title}</h3>
+            <h3 className="font-bold text-lg mb-1 h-14 line-clamp-2">{course.title}</h3>
+            <p className="text-sm text-muted-foreground mb-3 h-10 line-clamp-2">{course.description}</p>
             <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
                 <div className="flex items-center gap-2">
                     <Users size={16} />
@@ -78,7 +205,7 @@ const CourseCard = ({ course }: { course: typeof courses[0] }) => (
                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold">SCS</div>
                 <div>
                     <p className="text-sm font-semibold">{course.author}</p>
-                    <p className="text-xs text-gray-500">In {course.categories.join(', ')}</p>
+                    <p className="text-xs text-gray-500">In {course.primaryCategory}</p>
                 </div>
             </div>
         </div>
@@ -94,7 +221,7 @@ export default function CoursesLivePage() {
         <aside className="w-full lg:w-1/4">
           <div className="space-y-6">
             <div className="relative">
-              <input type="text" placeholder="Search" className="w-full border rounded-md py-2 px-4 pl-10" />
+              <input type="text" placeholder="Search Courses..." className="w-full border rounded-md py-2 px-4 pl-10" />
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             </div>
             <div>
@@ -142,3 +269,5 @@ export default function CoursesLivePage() {
     </div>
   );
 }
+
+    
