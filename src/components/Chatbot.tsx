@@ -73,13 +73,13 @@ export default function Chatbot() {
 
       <div
         className={cn(
-          'fixed top-0 right-0 h-full z-40 w-full max-w-md shadow-xl bg-white/95 dark:bg-black/95 backdrop-blur-lg border-l border-gray-200 dark:border-gray-800 transition-transform duration-300 ease-in-out',
+          'fixed top-0 right-0 h-full z-50 w-full max-w-md shadow-xl bg-white/95 dark:bg-black/95 backdrop-blur-lg border-l border-gray-200 dark:border-gray-800 transition-transform duration-300 ease-in-out',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
+          <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3 pt-6">
             <div className="p-2 bg-primary/20 rounded-full">
               <Bot className="h-6 w-6 text-primary" />
             </div>
