@@ -19,12 +19,20 @@ export default function CareerTimeline() {
       side: "right",
     },
     {
+      title: "Self-Achievement",
+      subtitle: "By highlighting the sense of accomplishment and growth",
+      fullTitle: "Earn Certificates & Celebrate Self-Achievement",
+      description: "Complete quizzes, assignments, and projects to earn certificates that validate your skills. Each certificate is not just a recognition of your learning but a testament to your personal achievement and growth. Display your certificates proudly as proof of your self-discipline and dedication to mastering new skills.",
+      icon: Award,
+      side: "left",
+    },
+    {
       title: "Projects",
       subtitle: "Apply your knowledge.",
       fullTitle: "Build Real-World Projects",
       description: "Put your skills to the test by building real-world projects. This is a crucial step to solidify your understanding and to create a portfolio that showcases your abilities to potential employers. Start with small projects and gradually move to more complex ones. Contribute to open-source projects to gain experience collaborating with other developers.",
       icon: FolderKanban,
-      side: "left",
+      side: "right",
     },
     {
       title: "Hackathons",
@@ -32,14 +40,6 @@ export default function CareerTimeline() {
       fullTitle: "Participate in Hackathons",
       description: "Hackathons are intense, collaborative events where you can build innovative solutions in a short amount of time. They are an excellent way to learn new technologies, work in a team, and network with other passionate individuals and companies. Winning or even just participating in hackathons can be a great addition to your resume.",
       icon: BrainCircuit,
-      side: "right",
-    },
-    {
-      title: "Self-Achievement",
-      subtitle: "By highlighting the sense of accomplishment and growth",
-      fullTitle: "Earn Certificates & Celebrate Self-Achievement",
-      description: "Complete quizzes, assignments, and projects to earn certificates that validate your skills. Each certificate is not just a recognition of your learning but a testament to your personal achievement and growth. Display your certificates proudly as proof of your self-discipline and dedication to mastering new skills.",
-      icon: Award,
       side: "left",
     },
     {
