@@ -16,6 +16,7 @@ import { useState } from "react"
 import AuthModal from "./AuthModal"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { Input } from "./ui/input"
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -30,6 +31,7 @@ export default function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const pathname = usePathname();
 
   const handleLoginSuccess = () => {
@@ -58,7 +60,7 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Search className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground" />
+            <Search onClick={() => setIsSearchOpen(true)} className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground" />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -97,7 +99,9 @@ export default function Header() {
       {/* Full-screen Menu Overlay */}
       <div className={cn(
           "fixed top-16 left-0 right-0 bottom-0 z-30 bg-white transition-all duration-500 ease-in-out",
-          isMenuOpen ? "translate-y-0 opacity-100 visible" : "-translate-y-full opacity-0 invisible"
+          isMenuOpen 
+            ? "translate-y-0 opacity-100 visible" 
+            : "-translate-y-full opacity-0 invisible"
       )}>
         <div className="container mx-auto max-w-7xl px-4 h-full">
             {/* Navigation Links */}
@@ -124,6 +128,28 @@ export default function Header() {
                     </div>
                 </Link>
             </nav>
+        </div>
+      </div>
+
+       {/* Search Overlay */}
+      <div className={cn(
+        "fixed inset-0 z-50 bg-black/80 backdrop-blur-sm transition-opacity duration-300 ease-in-out",
+        isSearchOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      )}>
+        <button onClick={() => setIsSearchOpen(false)} className="absolute top-6 right-8 text-white/70 hover:text-white">
+          <X size={32} />
+        </button>
+        <div className="h-full flex items-center justify-center">
+            <div className="relative w-full max-w-xl">
+                <Input 
+                    type="search" 
+                    placeholder="Search here..." 
+                    className="w-full h-16 pl-6 pr-16 rounded-full bg-transparent text-white text-xl border-2 border-white/50 focus:border-white focus:ring-0 placeholder:text-white/50"
+                />
+                <button className="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white">
+                    <Search size={24} />
+                </button>
+            </div>
         </div>
       </div>
 
