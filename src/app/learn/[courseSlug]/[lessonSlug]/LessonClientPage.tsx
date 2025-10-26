@@ -4,7 +4,7 @@
 import { notFound } from 'next/navigation';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Link from 'next/link';
-import { CheckCircle, Circle, FileText, MessageSquare, BookOpen, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle, Circle, FileText, MessageSquare, BookOpen, ChevronLeft, ChevronRight, PartyPopper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -19,6 +19,7 @@ type Lesson = Course['syllabus'][0]['lessons'][0];
 
 export default function LessonClientPage({ course, currentLessonIndex, lessonSlug }: { course: Course, currentLessonIndex: number, lessonSlug: string }) {
   const [isCompleted, setIsCompleted] = useState(false);
+  const [quizFinished, setQuizFinished] = useState(false);
   
   if (!course || !course.syllabus) {
     notFound();
@@ -27,11 +28,6 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   const allLessons = course.syllabus.flatMap(module => module.lessons);
   const currentLesson = allLessons[currentLessonIndex] as Lesson & { type?: string; options?: any[]; correctAnswer?: string; explanation?: string; };
   
-  // Reset completion state when lesson changes
-  useEffect(() => {
-    setIsCompleted(false);
-  }, [lessonSlug]);
-
   const totalLessons = allLessons.length;
   const progress = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -50,6 +46,43 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
   const prevLesson = currentLessonIndex > 0 ? allLessons[currentLessonIndex - 1] : null;
   const nextLesson = currentLessonIndex < allLessons.length - 1 ? allLessons[currentLessonIndex + 1] : null;
 
+  const isLastQuizQuestion = currentLesson.type === 'quiz' && !nextLesson;
+
+  // Reset completion state when lesson changes
+  useEffect(() => {
+    setIsCompleted(false);
+    if (lessonSlug !== allLessons[allLessons.length - 1].slug) {
+      setQuizFinished(false);
+    }
+  }, [lessonSlug, allLessons]);
+
+  const handleQuizCompletion = () => {
+    if (isCompleted) {
+      setQuizFinished(true);
+    }
+  }
+
+  if (quizFinished) {
+    return (
+        <div className="flex h-screen bg-gray-50 items-center justify-center">
+            <div className="text-center bg-white p-12 rounded-lg shadow-xl">
+                <PartyPopper className="w-16 h-16 text-accent mx-auto mb-4" />
+                <h2 className="text-3xl font-bold font-space-grotesk text-gray-900">Congratulations!</h2>
+                <p className="mt-2 text-lg text-muted-foreground">You have successfully completed the quiz.</p>
+                <p className="mt-1 text-muted-foreground">You're one step closer to mastering Python for Data Science & AI.</p>
+                <div className="mt-8 flex justify-center gap-4">
+                    <Link href={`/courses-live/${course.slug}`}>
+                        <Button variant="outline">Back to Course</Button>
+                    </Link>
+                    <Link href="/courses-live">
+                        <Button>Explore Other Courses</Button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+  }
+
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -62,7 +95,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
           </Link>
         </div>
         <div className="flex-grow overflow-y-auto">
-          <Accordion type="multiple" defaultValue={['item-0', 'item-1', 'item-2', 'item-3', 'item-4', 'item-5']} className="w-full">
+          <Accordion type="multiple" defaultValue={['item-0', 'item-1', 'item-2', 'item-3', 'item-4', 'item-5', 'item-6']} className="w-full">
             {course.syllabus.map((module, moduleIndex) => (
               <AccordionItem key={moduleIndex} value={`item-${moduleIndex}`} className="border-none">
                 <AccordionTrigger className="px-4 py-3 text-sm font-semibold hover:bg-gray-100 border-b">
@@ -105,8 +138,8 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                     <Button 
                       variant={isCompleted ? "default" : "outline"} 
                       size="sm"
-                      onClick={() => setIsCompleted(!isCompleted)}
-                      disabled={isCompleted}
+                      onClick={() => setIsCompleted(true)}
+                      disabled={isCompleted || currentLesson.type === 'quiz'}
                     >
                       {isCompleted ? "Completed" : "Mark as Complete"}
                     </Button>
@@ -122,7 +155,7 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
               </TabsList>
               <TabsContent value="overview">
                 {currentLesson.type === 'quiz' ? (
-                  <Quiz lesson={currentLesson} />
+                  <Quiz lesson={currentLesson} onCorrect={() => setIsCompleted(true)} />
                 ) : (
                   <article className="prose lg:prose-lg max-w-none">
                     {/* Note: In a real app, you would sanitize this HTML */}
@@ -146,7 +179,12 @@ export default function LessonClientPage({ course, currentLessonIndex, lessonSlu
                 ) : (
                     <div /> // Placeholder for alignment
                 )}
-                {nextLesson ? (
+                {isLastQuizQuestion ? (
+                    <Button onClick={handleQuizCompletion} disabled={!isCompleted}>
+                        Finish Quiz
+                        <CheckCircle className="h-4 w-4 ml-2" />
+                    </Button>
+                ) : nextLesson ? (
                     <Link href={`/learn/${course.slug}/${nextLesson.slug}`}>
                         <Button>
                             Next Lesson

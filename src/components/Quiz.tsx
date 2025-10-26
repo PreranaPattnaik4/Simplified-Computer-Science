@@ -21,7 +21,12 @@ type Lesson = {
     explanation?: string;
 }
 
-export default function Quiz({ lesson }: { lesson: Lesson }) {
+type QuizProps = {
+    lesson: Lesson;
+    onCorrect: () => void;
+}
+
+export default function Quiz({ lesson, onCorrect }: QuizProps) {
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [showFeedback, setShowFeedback] = useState(false);
 
@@ -30,6 +35,9 @@ export default function Quiz({ lesson }: { lesson: Lesson }) {
     const handleCheckAnswer = () => {
         if (selectedAnswer) {
             setShowFeedback(true);
+            if (selectedAnswer === lesson.correctAnswer) {
+                onCorrect();
+            }
         }
     };
     
