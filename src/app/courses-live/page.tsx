@@ -1,5 +1,5 @@
 'use client';
-import { Search, Star, Users, MessageSquare, ChevronDown } from 'lucide-react';
+import { Search, Star, Users, MessageSquare, ChevronDown, Award } from 'lucide-react';
 import Image from 'next/image';
 
 const categories = [
@@ -39,6 +39,7 @@ const courses = [
     students: 125,
     comments: 23,
     author: 'Prerana',
+    isTopCourse: true,
   },
   {
     title: 'Full-Stack Web Development with Next.js & React',
@@ -51,6 +52,7 @@ const courses = [
     students: 852,
     comments: 102,
     author: 'Prerana',
+    isTopCourse: true,
   },
   {
     title: 'AWS Certified Cloud Practitioner: Exam Prep',
@@ -99,6 +101,7 @@ const courses = [
     students: 1150,
     comments: 180,
     author: 'Prerana',
+    isTopCourse: true,
   },
   {
     title: 'Cybersecurity Fundamentals: Defending the Digital Frontier',
@@ -174,7 +177,7 @@ const courses = [
   },
 ];
 
-const CourseCard = ({ course }: { course: typeof courses[0] }) => (
+const CourseCard = ({ course }: { course: (typeof courses)[0] & { isTopCourse?: boolean } }) => (
     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
         <div className="relative">
             <Image src={course.image} alt={course.title} width={500} height={300} className="w-full h-48 object-cover" />
@@ -182,6 +185,12 @@ const CourseCard = ({ course }: { course: typeof courses[0] }) => (
                 <MessageSquare size={16} />
             </div>
             <div className="absolute top-2 left-2 bg-accent text-accent-foreground text-xs font-bold uppercase px-2 py-1 rounded-md">{course.level}</div>
+            {course.isTopCourse && (
+                <div className="absolute bottom-2 left-2 bg-blue-600 text-white text-xs font-bold uppercase px-2 py-1 rounded-md flex items-center gap-1">
+                    <Award size={14} />
+                    <span>Top Course 2026</span>
+                </div>
+            )}
         </div>
         <div className="p-4">
             <div className="flex items-center mb-2">
@@ -269,5 +278,3 @@ export default function CoursesLivePage() {
     </div>
   );
 }
-
-    
