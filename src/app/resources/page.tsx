@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import { Lightbulb } from 'lucide-react';
 
 const heroImages = [
   {
@@ -47,6 +48,22 @@ export default function ResourcesPage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* New Content Section */}
+      <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
+        <h2 className="text-4xl font-bold font-space-grotesk">Unleash Your Potential in AI, Tech & Innovation!</h2>
+        <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
+          Gain hands-on experience through exciting hackathons and real-world internships in AI, Machine Learning, and cutting-edge tech. Build your portfolio, collaborate with industry experts, and stand out in your career journey.
+        </p>
+        <ul className="mt-6 flex justify-center flex-wrap gap-8 text-lg">
+          <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Work on real projects</li>
+          <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Enhance your problem-solving skills</li>
+          <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Earn certificates & grow your network</li>
+        </ul>
+        <button className="mt-8 rounded-full bg-accent px-12 py-4 text-lg font-bold text-accent-foreground transition-transform hover:scale-105">
+          Start your journey today!
+        </button>
       </section>
 
       {/* Original Content */}
