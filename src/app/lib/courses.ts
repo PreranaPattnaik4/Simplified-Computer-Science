@@ -462,6 +462,86 @@ print(squares_comp) # [0, 1, 4, 9, 16]
                 { slug: 'building-a-neural-network', title: 'Building a simple neural network for classification', content: 'Content for building a neural network.' },
                 { slug: 'activation-optimizers', title: 'Understanding activation functions and optimizers', content: 'Content for activation functions.' },
             ]
+        },
+        {
+            title: "Final Quiz",
+            lessons: [
+                { 
+                    slug: "quiz-q1", 
+                    title: "Question 1", 
+                    content: `### Question 1: What is the primary advantage of using Python for data science?
+
+*   A) Its performance is faster than C++
+*   B) Its simple syntax and extensive libraries
+*   C) It is the only language for web development
+*   D) It has built-in database management
+
+<br/>
+**Correct Answer: B** 
+<br/>
+**Explanation:** Python's readability and vast ecosystem of libraries like Pandas, NumPy, and Scikit-learn make it the top choice for data scientists.`
+                },
+                { 
+                    slug: "quiz-q2", 
+                    title: "Question 2", 
+                    content: `### Question 2: Which library is most commonly used for data manipulation and analysis in Python?
+
+*   A) NumPy
+*   B) Matplotlib
+*   C) Pandas
+*   D) TensorFlow
+
+<br/>
+**Correct Answer: C** 
+<br/>
+**Explanation:** Pandas provides high-performance, easy-to-use data structures (like the DataFrame) and data analysis tools.`
+                },
+                { 
+                    slug: "quiz-q3", 
+                    title: "Question 3", 
+                    content: `### Question 3: What does the following list comprehension do? \`[x**2 for x in range(5)]\`
+
+*   A) Creates a list of numbers from 0 to 4.
+*   B) Creates a list containing the square of numbers from 0 to 4.
+*   C) Creates a list with the number 5 repeated twice.
+*   D) Throws a syntax error.
+
+<br/>
+**Correct Answer: B**
+<br/>
+**Explanation:** The list comprehension iterates from 0 up to (but not including) 5, and for each number \`x\`, it calculates \`x**2\` (x squared) and adds it to the new list, resulting in \`[0, 1, 4, 9, 16]\`.`
+                },
+                { 
+                    slug: "quiz-q4", 
+                    title: "Question 4", 
+                    content: `### Question 4: In machine learning, what is the difference between classification and regression?
+
+*   A) Classification predicts a continuous value, while regression predicts a discrete category.
+*   B) Classification is unsupervised, while regression is supervised.
+*   C) Classification predicts a discrete category, while regression predicts a continuous value.
+*   D) There is no difference.
+
+<br/>
+**Correct Answer: C**
+<br/>
+**Explanation:** Classification models predict a category (e.g., 'spam' or 'not spam'), whereas regression models predict a numerical value (e.g., house price).`
+                },
+                { 
+                    slug: "quiz-q5", 
+                    title: "Question 5", 
+                    content: `### Question 5: What is the main purpose of an activation function in a neural network?
+
+*   A) To calculate the loss of the model.
+*   B) To introduce non-linearity into the network.
+*   C) To initialize the weights of the network.
+*   D) To increase the number of layers.
+
+<br/>
+**Correct Answer: B**
+<br/>
+**Explanation:** Without non-linear activation functions, a neural network would just be a linear model, unable to learn complex patterns in data.`
+                }
+            ]
         }
     ]
   },
