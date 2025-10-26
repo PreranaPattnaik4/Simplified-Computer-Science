@@ -21,6 +21,20 @@ export const metadata: Metadata = {
   description: "Unlocking Computer Science: SimplifiedCS for Effortless Learning!",
 };
 
+function LayoutWrapper({ children }: { children: React.ReactNode }) {
+  'use client';
+  const pathname = usePathname();
+  const isLearnPage = pathname ? pathname.includes('/learn/') : false;
+
+  return (
+    <>
+      {!isLearnPage && <Header />}
+      {children}
+      {!isLearnPage && <Footer />}
+    </>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,20 +48,5 @@ export default function RootLayout({
         </LayoutWrapper>
       </body>
     </html>
-  );
-}
-
-// A new wrapper component to conditionally render header and footer
-function LayoutWrapper({ children }: { children: React.ReactNode }) {
-  'use client';
-  const pathname = usePathname();
-  const isLearnPage = pathname.includes('/learn/');
-
-  return (
-    <>
-      {!isLearnPage && <Header />}
-      {children}
-      {!isLearnPage && <Footer />}
-    </>
   );
 }
