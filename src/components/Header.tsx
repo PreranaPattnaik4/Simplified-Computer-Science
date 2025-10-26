@@ -1,7 +1,7 @@
 
 "use client"
 
-import { Menu, User, Search, HelpCircle } from "lucide-react"
+import { Menu, User, Search } from "lucide-react"
 import Link from "next/link"
 import {
   DropdownMenu,
@@ -22,7 +22,7 @@ export default function Header() {
             <DropdownMenuTrigger asChild>
               <div className="flex cursor-pointer items-center gap-2">
                 <Menu className="h-6 w-6" />
-                <span className="font-semibold">MENU</span>
+                <span className="font-semibold text-sm">MENU</span>
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -31,11 +31,8 @@ export default function Header() {
               <Link href="/" passHref>
                 <DropdownMenuItem>Home</DropdownMenuItem>
               </Link>
-              <Link href="/courses" passHref>
-                <DropdownMenuItem>Courses</DropdownMenuItem>
-              </Link>
               <Link href="/courses-live" passHref>
-                <DropdownMenuItem>Courses Live!</DropdownMenuItem>
+                <DropdownMenuItem>Courses</DropdownMenuItem>
               </Link>
               <Link href="/blog" passHref>
                 <DropdownMenuItem>Blog</DropdownMenuItem>
@@ -43,8 +40,11 @@ export default function Header() {
               <Link href="/resources" passHref>
                 <DropdownMenuItem>Resources</DropdownMenuItem>
               </Link>
-              <Link href="/faq" passHref>
-                <DropdownMenuItem>FAQ</DropdownMenuItem>
+               <Link href="/about" passHref>
+                <DropdownMenuItem>About</DropdownMenuItem>
+              </Link>
+              <Link href="/contact" passHref>
+                <DropdownMenuItem>Contact</DropdownMenuItem>
               </Link>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -60,28 +60,23 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="#">Sign In</Link>
-          </Button>
-          <Button variant="outline" size="sm" asChild>
-            <Link href="#">Sign Up</Link>
-          </Button>
+          <Search className="h-5 w-5 cursor-pointer text-muted-foreground hover:text-foreground" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
-                <User className="h-6 w-6" />
+                <User className="h-5 w-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <Link href="/dashboard" passHref><DropdownMenuItem>Dashboard</DropdownMenuItem></Link>
-              <Link href="/profile" passHref><DropdownMenuItem>Profile</DropdownMenuItem></Link>
+              <Link href="#" passHref><DropdownMenuItem>Sign In</DropdownMenuItem></Link>
+              <Link href="#" passHref><DropdownMenuItem>Sign Up</DropdownMenuItem></Link>
               <DropdownMenuSeparator />
               <DropdownMenuItem>Log out</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Search className="h-6 w-6 cursor-pointer" />
         </div>
       </div>
     </header>
