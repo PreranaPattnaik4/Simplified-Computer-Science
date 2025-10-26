@@ -57,7 +57,7 @@ export default function Chatbot() {
         }, 1000);
         return () => clearTimeout(timer);
     }
-  }, [isOpen]);
+  }, [isOpen, messages.length]);
 
   return (
     <>
@@ -73,11 +73,11 @@ export default function Chatbot() {
 
       <div
         className={cn(
-          'fixed bottom-24 right-6 z-50 w-full max-w-sm rounded-lg shadow-xl bg-white/80 dark:bg-black/80 backdrop-blur-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 ease-in-out',
+          'fixed bottom-24 right-6 z-50 w-full max-w-md rounded-lg shadow-xl bg-white/80 dark:bg-black/80 backdrop-blur-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 ease-in-out',
           isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         )}
       >
-        <div className="flex flex-col h-[60vh] max-h-[70vh]">
+        <div className="flex flex-col h-[70vh] max-h-[70vh]">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center gap-3">
             <div className="p-2 bg-primary/20 rounded-full">
