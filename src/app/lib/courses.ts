@@ -1,3 +1,4 @@
+
 import placeholderImages from './placeholder-images.json';
 
 const courses = [
@@ -14,6 +15,10 @@ const courses = [
     comments: 23,
     author: 'Prerana',
     isTopCourse: true,
+    syllabus: [
+      { title: 'Module 1: Introduction to Deep Learning', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Advanced Concepts', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'full-stack-web-development-with-nextjs-and-react',
@@ -28,6 +33,10 @@ const courses = [
     comments: 102,
     author: 'Prerana',
     isTopCourse: true,
+    syllabus: [
+      { title: 'Module 1: React Fundamentals', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Next.js and Server-Side Rendering', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'aws-certified-cloud-practitioner-exam-prep',
@@ -42,6 +51,10 @@ const courses = [
     comments: 450,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: Introduction to AWS', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Core AWS Services', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'data-structures-and-algorithms-in-python',
@@ -56,6 +69,10 @@ const courses = [
     comments: 250,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: Core Data Structures', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Common Algorithms', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'introduction-to-generative-ai-and-large-language-models',
@@ -70,6 +87,10 @@ const courses = [
     comments: 120,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: What is Generative AI?', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Working with LLMs', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'docker-and-kubernetes-the-complete-guide',
@@ -84,6 +105,10 @@ const courses = [
     comments: 180,
     author: 'Prerana',
     isTopCourse: true,
+    syllabus: [
+      { title: 'Module 1: Docker Fundamentals', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Kubernetes Orchestration', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'cybersecurity-fundamentals-defending-the-digital-frontier',
@@ -98,6 +123,10 @@ const courses = [
     comments: 95,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: Introduction to Cybersecurity', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Common Threats and Defenses', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'advanced-natural-language-processing-with-pytorch',
@@ -112,6 +141,10 @@ const courses = [
     comments: 85,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: NLP Fundamentals', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Advanced NLP Models', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'sql-for-data-science-from-beginner-to-advanced',
@@ -126,6 +159,10 @@ const courses = [
     comments: 320,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: SQL Basics', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Advanced SQL Queries', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'introduction-to-ux-ui-design-principles',
@@ -140,6 +177,10 @@ const courses = [
     comments: 70,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: UX/UI Fundamentals', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Design Principles', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'compiler-design-and-theory-from-code-to-execution',
@@ -154,6 +195,10 @@ const courses = [
     comments: 45,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: Compiler Theory', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Practical Compiler Design', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'object-oriented-design-patterns-in-javascript',
@@ -168,6 +213,10 @@ const courses = [
     comments: 110,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+      { title: 'Module 1: OOD Principles', topics: ['Topic 1A', 'Topic 1B'] },
+      { title: 'Module 2: Common Design Patterns', topics: ['Topic 2A', 'Topic 2B'] },
+    ]
   },
   {
     slug: 'mastering-python-for-data-science-and-ai',
@@ -182,6 +231,56 @@ const courses = [
     comments: 450,
     author: 'Prerana',
     isTopCourse: false,
+    syllabus: [
+        {
+            title: "Module 1: Python Fundamentals for Data Science",
+            topics: [
+                "Introduction to Python and its data ecosystem",
+                "Variables, data types, and operators",
+                "Control flow: loops and conditional statements",
+                "Functions and modular programming",
+                "File I/O and working with data sources"
+            ]
+        },
+        {
+            title: "Module 2: Data Manipulation with NumPy and Pandas",
+            topics: [
+                "Introduction to NumPy arrays and vectorized operations",
+                "Pandas Series and DataFrame objects",
+                "Data cleaning, transformation, and merging",
+                "Grouping, aggregation, and pivot tables",
+                "Time series data analysis with Pandas"
+            ]
+        },
+        {
+            title: "Module 3: Data Visualization with Matplotlib and Seaborn",
+            topics: [
+                "Principles of effective data visualization",
+                "Creating various plot types with Matplotlib",
+                "Statistical data visualization with Seaborn",
+                "Customizing plots for presentations"
+            ]
+        },
+        {
+            title: "Module 4: Machine Learning Fundamentals with Scikit-Learn",
+            topics: [
+                "Introduction to machine learning concepts",
+                "Supervised learning: regression and classification",
+                "Unsupervised learning: clustering and dimensionality reduction",
+                "Model evaluation and cross-validation",
+                "Building a complete machine learning pipeline"
+            ]
+        },
+        {
+            title: "Module 5: Introduction to Deep Learning",
+            topics: [
+                "Core concepts of neural networks",
+                "Introduction to TensorFlow and Keras (or PyTorch)",
+                "Building a simple neural network for classification",
+                "Understanding activation functions and optimizers"
+            ]
+        }
+    ]
   },
 ];
 

@@ -1,9 +1,11 @@
+
 import { getCourseBySlug, getCourses } from '@/app/lib/courses';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Clock, BarChart, Users, Star, Award } from 'lucide-react';
+import { CheckCircle, Clock, BarChart, Users, Star, Award, ListChecks } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 export async function generateStaticParams() {
   const courses = getCourses();
@@ -53,7 +55,7 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
               </div>
             </div>
 
-            <Card>
+            <Card className="mb-8">
               <CardHeader>
                 <CardTitle className="font-space-grotesk text-2xl">What you'll learn</CardTitle>
               </CardHeader>
@@ -66,6 +68,31 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   <li className="flex items-start gap-3"><CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} /><span>Understand the core concepts of Generative AI and LLMs.</span></li>
                   <li className="flex items-start gap-3"><CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} /><span>Deploy models and build real-world AI applications.</span></li>
                 </ul>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-space-grotesk text-2xl">Course Syllabus</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  {course.syllabus?.map((item, index) => (
+                    <AccordionItem key={index} value={`item-${index}`}>
+                      <AccordionTrigger className="text-lg font-semibold font-space-grotesk text-left">{item.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-3 pl-2">
+                          {item.topics.map((topic, topicIndex) => (
+                            <li key={topicIndex} className="flex items-start gap-3 text-muted-foreground">
+                              <ListChecks className="text-accent mt-1 flex-shrink-0" size={18} />
+                              <span>{topic}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </CardContent>
             </Card>
 
