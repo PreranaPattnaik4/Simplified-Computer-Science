@@ -26,6 +26,10 @@ export default function IndustrySolutions() {
             </div>
         </div>
 
+        <div className="flex justify-center mb-8">
+          <Tag number="05" text="Machine Learning" color="bg-pastel-purple-bg" />
+        </div>
+
 
         <h2 className="text-4xl md:text-6xl font-extrabold text-gray-800 text-center my-8 font-space-grotesk">
           Industry Solutions
@@ -34,9 +38,8 @@ export default function IndustrySolutions() {
         {/* Bottom Tags */}
         <div className="w-full flex justify-center items-start gap-4 mt-8">
             <div className="flex flex-col items-end gap-4">
-                <Tag number="05" text="Machine Learning" color="bg-pastel-purple-bg" />
-                <Tag number="08" text="Responsible AI" color="bg-pastel-blue-bg" />
-                <Tag number="09" text="Multilingual Model" color="bg-pastel-yellow-bg" />
+                 <Tag number="08" text="Responsible AI" color="bg-pastel-blue-bg" />
+                 <Tag number="09" text="Multilingual Model" color="bg-pastel-yellow-bg" />
             </div>
             <div className="flex flex-col items-start gap-4 pt-8">
                  <Tag number="06" text="Generative Pre-Trained Transformer" color="bg-pastel-pink-bg" />
