@@ -155,7 +155,7 @@ export default function CareerTimeline() {
                   </div>
 
                   {/* Mid-section headline */}
-                  {index === 3 && (
+                  {index === 4 && (
                     <div className="my-16 text-center px-4">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                         Advancing Your Career: From Gaining Experience to Becoming an Industry Expert
@@ -171,3 +171,5 @@ export default function CareerTimeline() {
     </section>
   );
 }
+
+    

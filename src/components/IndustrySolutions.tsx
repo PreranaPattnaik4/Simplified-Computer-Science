@@ -10,7 +10,7 @@ export default function IndustrySolutions() {
     { number: "06", text: "Responsible AI", color: "bg-pastel-purple-bg" },
     { number: "07", text: "Deep Learning", color: "bg-pastel-green-bg" },
     { number: "08", text: "AI Ethics", color: "bg-pastel-blue-bg" },
-    { number: "09", atext: "Neural Networks", color: "bg-pastel-yellow-bg" },
+    { number: "09", text: "Neural Networks", color: "bg-pastel-yellow-bg" },
     { number: "10", text: "Cloud Computing", color: "bg-pastel-pink-bg" },
   ];
 
@@ -37,3 +37,5 @@ export default function IndustrySolutions() {
     </section>
   );
 }
+
+    
