@@ -332,60 +332,6 @@ export default function HomePage() {
             </div>
         </section>
       </main>
-
-      {/* Section 11: Footer */}
-      <footer className="bg-black text-white/80">
-        <div className="container mx-auto max-w-7xl px-4 py-16">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
-            <div>
-              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">SIMPLIFIEDCOMPUTERSCIENCE</h3>
-              <p>Welcome to Simplified Computer Science, your ultimate guide to the world of technology. Our mission is to make computer science accessible and understandable for everyone, from beginners to experts.</p>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">QUICK LINKS</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-accent">Home</a></li>
-                <li><a href="#" className="hover:text-accent">About</a></li>
-                <li><a href="/resources" className="hover:text-accent">Resources</a></li>
-                <li><a href="#" className="hover:text-accent">My Profile</a></li>
-                <li><a href="#" className="hover:text-accent">Contact</a></li>
-                <li><a href="#" className="hover:text-accent">FAQ</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">EXPLORER</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-accent">Blogs</a></li>
-                <li><a href="#" className="hover:text-accent">Courses Live!</a></li>
-                <li><a href="#" className="hover:text-accent">Resources</a></li>
-                <li><a href="#" className="hovertext-accent">Services</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">GET IN TOUCH</h3>
-              <p>simplifiedcomputerscie@gmail.com</p>
-              <div className="mt-4 flex space-x-4">
-                <a href="#"><Instagram className="h-6 w-6 hover:text-accent"/></a>
-                <a href="#"><Linkedin className="h-6 w-6 hover:text-accent"/></a>
-                <a href="#">{/* Medium Icon */}</a>
-                <a href="#"><Youtube className="h-6 w-6 hover:text-accent"/></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-white/10 py-4">
-            <div className="container mx-auto flex max-w-7xl flex-col items-center justify-between px-4 text-sm sm:flex-row">
-                <p>&copy; {new Date().getFullYear()} Simplified Computer Science. All Rights Reserved.</p>
-                <div className="flex gap-4 mt-4 sm:mt-0">
-                    <a href="#" className="hover:text-accent">Terms and Conditions</a>
-                    <a href="#" className="hover:text-accent">Privacy Policy</a>
-                    <a href="#" className="hover:text-accent">Disclaimer</a>
-                </div>
-            </div>
-        </div>
-      </footer>
     </div>
   );
 }
-
-    

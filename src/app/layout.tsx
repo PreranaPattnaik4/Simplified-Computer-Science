@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable, fontSpaceGrotesk.variable)}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
