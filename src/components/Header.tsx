@@ -38,6 +38,9 @@ export default function Header() {
               <Link href="/resources" passHref>
                 <DropdownMenuItem>Resources</DropdownMenuItem>
               </Link>
+              <Link href="/faq" passHref>
+                <DropdownMenuItem>FAQ</DropdownMenuItem>
+              </Link>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
