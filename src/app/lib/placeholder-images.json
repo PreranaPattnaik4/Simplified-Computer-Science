@@ -1,0 +1,15 @@
+{
+    "course1": { "src": "https://picsum.photos/seed/course1/500/300", "hint": "AI deep learning" },
+    "course2": { "src": "https://picsum.photos/seed/course2/500/300", "hint": "web development code" },
+    "course3": { "src": "https://picsum.photos/seed/course3/500/300", "hint": "cloud infrastructure" },
+    "course4": { "src": "https://picsum.photos/seed/course4/500/300", "hint": "python code algorithm" },
+    "course5": { "src": "https://picsum.photos/seed/course5/500/300", "hint": "generative AI art" },
+    "course6": { "src": "https://picsum.photos/seed/course6/500/300", "hint": "container orchestration" },
+    "course7": { "src": "https://picsum.photos/seed/course7/500/300", "hint": "cybersecurity lock" },
+    "course8": { "src": "https://picsum.photos/seed/course8/500/300", "hint": "natural language processing" },
+    "course9": { "src": "https://picsum.photos/seed/course9/500/300", "hint": "database query" },
+    "course10": { "src": "https://picsum.photos/seed/course10/500/300", "hint": "UI UX design" },
+    "course11": { "src": "https://picsum.photos/seed/course11/500/300", "hint": "compiler code" },
+    "course12": { "src": "https://picsum.photos/seed/course12/500/300", "hint": "javascript code" },
+    "course13": { "src": "https://picsum.photos/seed/course13/500/300", "hint": "python data science" }
+}
