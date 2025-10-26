@@ -55,20 +55,17 @@ export default function ContactPage() {
                     <h2 className="text-3xl font-bold font-space-grotesk text-gray-900 mb-6">
                         Contact Information
                     </h2>
-                    <div className="space-y-4">
+                     <div className="space-y-4">
                         <div className="flex items-center gap-4">
                             <Mail className="h-6 w-6 text-accent" />
-                            <a href="mailto:simplifiedcomputerscie@gmail.com" className="text-lg text-gray-700 hover:text-accent">simplifiedcomputerscie@gmail.com</a>
-                        </div>
-                        <div className="flex items-center gap-4">
-                            <Phone className="h-6 w-6 text-accent" />
-                            <span className="text-lg text-gray-700">(123) 456-7890</span>
-                        </div>
-                        <div className="flex items-start gap-4">
-                            <MapPin className="h-6 w-6 text-accent mt-1" />
-                            <span className="text-lg text-gray-700">123 Tech Street<br/>Innovation City, 12345</span>
+                            <a href="mailto:simplifiedcomputerscience@gmail.com" className="text-lg text-gray-700 hover:text-accent">simplifiedcomputerscience@gmail.com</a>
                         </div>
                     </div>
+                    <div className="mt-8">
+                        <h3 className="text-2xl font-bold font-space-grotesk text-gray-900 mb-4">Your Feedback Matters</h3>
+                        <p className="text-lg text-gray-700">We value your feedback and are committed to continuously improving our content. If you notice any mistakes or omissions, or if you have suggestions for us, please feel free to contact us. Your input helps us provide the best possible experience for our users.</p>
+                    </div>
+                     <p className="mt-4 text-lg text-gray-700">If you have any questions or need further information, please do not hesitate to reach out to us.</p>
                 </div>
             </div>
           </div>

@@ -1,24 +1,6 @@
 import { GraduationCap, Lightbulb, Users, CheckCircle } from 'lucide-react';
 import Image from 'next/image';
 
-const features = [
-  {
-    icon: <GraduationCap className="h-10 w-10 text-accent" />,
-    title: 'Expert-Led Courses',
-    description: 'Learn from industry experts with our comprehensive, up-to-date courses designed for all skill levels.',
-  },
-  {
-    icon: <Lightbulb className="h-10 w-10 text-accent" />,
-    title: 'Innovative Learning',
-    description: 'We simplify complex topics, making them accessible and engaging through practical examples and hands-on projects.',
-  },
-  {
-    icon: <Users className="h-10 w-10 text-accent" />,
-    title: 'Community Focused',
-    description: 'Join a thriving community of learners, share your knowledge, and collaborate on exciting projects.',
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="bg-background text-foreground">
@@ -30,7 +12,7 @@ export default function AboutPage() {
               About Simplified Computer Science
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-              Our mission is to make technology and computer science accessible to everyone by simplifying complex concepts and fostering a community of learners and innovators.
+              Discover the Most Trending Courses in AI, Technology, and more! Join now to access these High-Demand Courses Earn Free Certificate at Simplified Computer Science
             </p>
           </div>
         </section>
@@ -40,13 +22,19 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div className="pr-8">
               <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">
-                Our Mission
+                Welcome to Simplified Computer Science: Your Comprehensive Educational Platform
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                At Simplified Computer Science, we believe that education should be accessible to everyone, regardless of their background or experience. We are dedicated to breaking down complex topics into easy-to-understand content, empowering our users to build skills, solve problems, and innovate.
+                At Simplified Computer Science, we provide a variety of resources to help you enhance your skills and knowledge in the tech industry. Our offerings include:
               </p>
-              <p className="mt-4 text-lg text-muted-foreground">
-                We strive to create a learning environment that is not only educational but also inspiring, fostering a passion for technology and lifelong learning.
+              <ul className="mt-4 space-y-2 text-lg text-muted-foreground">
+                <li><strong>Courses:</strong> A wide range of online courses covering essential and emerging technologies for learners at all levels.</li>
+                <li><strong>Kindle eBooks:</strong> In-depth eBooks on cutting-edge topics, providing practical insights for self-paced learning.</li>
+                <li><strong>Insightful Blogs:</strong> Engaging blog posts that explore the latest trends, tips, and best practices in technology.</li>
+                <li><strong>Engaging YouTube Content:</strong> Informative videos that simplify complex concepts, making learning interactive and enjoyable.</li>
+              </ul>
+               <p className="mt-4 text-lg text-muted-foreground">
+                Join us on your educational journey and unlock your potential in technology today!
               </p>
             </div>
             <div className="w-full h-80 relative rounded-lg overflow-hidden shadow-lg">
@@ -73,38 +61,22 @@ export default function AboutPage() {
                 </div>
                 <div className="pl-8">
                     <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">
-                        Meet Our Founder
+                        MEET PRERANA
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Simplified Computer Science was founded by Prerana, a tech enthusiast and educator with a passion for demystifying technology. With a background in software engineering and a drive to share knowledge, Prerana created this platform to provide high-quality, accessible education for aspiring tech professionals and curious minds alike.
+                        Welcome to Simplified Computer Science! I’m Prerana, the creator behind this platform. Whether you’re here to explore, learn, or collaborate, I’m excited to connect with you. With a passion for web development, content creation, and digital marketing, I’m dedicated to turning ideas into engaging online experiences. Let’s work together to bring your vision to life!
                     </p>
                 </div>
             </div>
         </section>
-
-        {/* Why Choose Us Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold font-space-grotesk text-gray-900">
-                Why Choose Us?
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                We are committed to providing a top-tier learning experience. Here's what sets us apart:
-              </p>
-            </div>
-            <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-3 gap-10">
-              {features.map((feature, index) => (
-                <div key={index} className="text-center p-6 border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
-                  <div className="flex justify-center items-center mb-4">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold font-space-grotesk text-gray-900">{feature.title}</h3>
-                  <p className="mt-2 text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+        
+        <section className="py-20 px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl font-bold font-space-grotesk text-gray-900">Bringing Your Vision to Life with Expert Web Development & AI Solutions</h2>
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
+                Let’s Collaborate! Gain full access to our extensive library of free courses and track your progress effortlessly! While our Blogs, Tutorials, and Resources are available without signup, registering allows you to enjoy exclusive content, course certificates, and more. Most of our courses are free—start learning today with no fees, just knowledge!
+            </p>
+             <p className="mt-4 text-lg text-muted-foreground">Looking forward to staying connected on LinkedIn! And see how I turn ideas into impactful digital experiences. discover my work!</p>
+             <a href="#" className="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 transition-colors">LINKEDIN</a>
         </section>
       </main>
     </div>

@@ -6,23 +6,24 @@ export default function DisclaimerPage() {
                 Last updated: {new Date().toLocaleDateString()}
             </p>
 
+            <h2>Use with Caution, but Trust in Our Content</h2>
             <p>
-                The information provided by Simplified Computer Science (“we,” “us” or “our”) on [website.com] (the “Site”) is for general informational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability or completeness of any information on the Site.
+                At Simplified Computer Science, we take pride in providing high-quality, well-researched content to help you enhance your skills. While we strive for accuracy and reliability, it's important to remember that applying the information we provide is ultimately your choice and responsibility. This means that how you use the content, including the decisions you make based on it, is up to you. We encourage users to cross-check any critical information, especially if it involves personal, technical, or professional matters. Although we are confident in the content we share, we cannot be held accountable for any unintended consequences from its use, as individual circumstances and outcomes may vary.
             </p>
 
-            <h2>External Links Disclaimer</h2>
+            <h2>Image Usage</h2>
             <p>
-                The Site may contain (or you may be sent through the Site) links to other websites or content belonging to or originating from third parties or links to websites and features in banners or other advertising. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.
+                Users are not permitted to download images directly from our site; instead, visit Freepik for sourcing, and use Canva for any necessary edits. For more detailed information, we encourage you to check our FAQ section for guidance on image usage and downloads.
             </p>
 
-            <h2>Professional Disclaimer</h2>
+            <h2>Image Credits</h2>
             <p>
-                The Site cannot and does not contain professional advice. The information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. We do not provide any kind of professional advice.
+                We use images from reputable sources like Freepik and Canva to enhance the visual appeal of our content. While we are pro users of Canva and edit all images there, we do not own the images from Canva. Proper credits for Freepik images can be found at Freepik and for Canva at Canva. And plz check out our disclaimer and credit sections . CHECK OUT THESE TWO WEBSITES click here Freepik <a href="https://www.freepik.com/" target="_blank" rel="noopener noreferrer">https://www.freepik.com/</a> Canva <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer">https://www.canva.com/</a>
             </p>
             
-            <h2>Testimonials Disclaimer</h2>
+            <h2>Our Content Creation Process</h2>
             <p>
-                The Site may contain testimonials by users of our products and/or services. These testimonials reflect the real-life experiences and opinions of such users. However, the experiences are personal to those particular users, and may not necessarily be representative of all users of our products and/or services.
+                All our content is crafted with the help of cutting-edge AI tools like ChatGPT and Gemini. This ensures that our articles, tutorials, and guides are not only accurate and informative but also engaging and easy to understand.
             </p>
         </div>
     )
