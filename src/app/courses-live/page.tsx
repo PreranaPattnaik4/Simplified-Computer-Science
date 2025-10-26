@@ -30,7 +30,7 @@ const tags = [
 const courses = [
   {
     title: 'Advanced AI: Deep Learning with TensorFlow',
-    description: 'Master deep learning concepts and build advanced neural networks using TensorFlow.',
+    description: 'Master deep learning concepts and build advanced neural networks using TensorFlow. This course covers everything from fundamental principles to advanced applications, preparing you for a career at the forefront of AI.',
     level: 'Advanced',
     primaryCategory: 'Artificial Intelligence',
     suggestedTags: ['Python', 'TensorFlow', 'PyTorch'],
@@ -43,7 +43,7 @@ const courses = [
   },
   {
     title: 'Full-Stack Web Development with Next.js & React',
-    description: 'Build and deploy modern, server-rendered web applications from scratch.',
+    description: 'Build and deploy modern, server-rendered web applications from scratch. You will learn the entire stack, from front-end development with React to back-end with Next.js, and deploy your applications with confidence.',
     level: 'Intermediate',
     primaryCategory: 'Software Development',
     suggestedTags: ['JavaScript', 'Next.js', 'DevOps'],
@@ -92,7 +92,7 @@ const courses = [
   },
   {
     title: 'Docker & Kubernetes: The Complete Guide',
-    description: 'Containerize and orchestrate your applications for scalable and efficient deployments.',
+    description: 'Containerize and orchestrate your applications for scalable and efficient deployments. This course provides hands-on experience with the tools that power modern cloud infrastructure.',
     level: 'Intermediate',
     primaryCategory: 'Cloud & IT Infrastructure',
     suggestedTags: ['Docker', 'Kubernetes', 'DevOps'],
@@ -177,11 +177,17 @@ const courses = [
   },
 ];
 
-const CourseCard = ({ course }: { course: (typeof courses)[0] & { isTopCourse?: boolean } }) => (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
-        <div className="relative">
-            <Image src={course.image} alt={course.title} width={500} height={300} className="w-full h-48 object-cover" />
-             <div className="absolute top-2 right-2 bg-white p-1.5 rounded-full text-gray-500 hover:text-accent cursor-pointer">
+const CourseCard = ({ course, isFeatured = false }: { course: (typeof courses)[0]; isFeatured?: boolean }) => (
+    <div className={`bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group ${isFeatured ? 'flex flex-col md:flex-row' : ''}`}>
+        <div className={`relative ${isFeatured ? 'md:w-1/2' : ''}`}>
+            <Image 
+                src={course.image} 
+                alt={course.title} 
+                width={500} 
+                height={300} 
+                className={`w-full object-cover ${isFeatured ? 'h-full' : 'h-48'}`} 
+            />
+            <div className="absolute top-2 right-2 bg-white p-1.5 rounded-full text-gray-500 hover:text-accent cursor-pointer">
                 <MessageSquare size={16} />
             </div>
             <div className="absolute top-2 left-2 bg-accent text-accent-foreground text-xs font-bold uppercase px-2 py-1 rounded-md">{course.level}</div>
@@ -192,29 +198,33 @@ const CourseCard = ({ course }: { course: (typeof courses)[0] & { isTopCourse?: 
                 </div>
             )}
         </div>
-        <div className="p-4">
-            <div className="flex items-center mb-2">
-                {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className={i < course.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"} />
-                ))}
-            </div>
-            <h3 className="font-bold text-lg mb-1 h-14 line-clamp-2">{course.title}</h3>
-            <p className="text-sm text-muted-foreground mb-3 h-10 line-clamp-2">{course.description}</p>
-            <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
-                <div className="flex items-center gap-2">
-                    <Users size={16} />
-                    <span>{course.students}</span>
+        <div className={`p-4 flex flex-col ${isFeatured ? 'md:w-1/2 justify-between' : ''}`}>
+            <div>
+                <div className="flex items-center mb-2">
+                    {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className={i < course.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"} />
+                    ))}
                 </div>
-                <div className="flex items-center gap-2">
-                    <MessageSquare size={16} />
-                    <span>{course.comments}</span>
-                </div>
+                <h3 className={`font-bold mb-1 ${isFeatured ? 'text-2xl h-auto' : 'text-lg h-14 line-clamp-2'}`}>{course.title}</h3>
+                <p className={`text-muted-foreground mb-3 ${isFeatured ? 'text-base h-auto line-clamp-none' : 'text-sm h-10 line-clamp-2'}`}>{course.description}</p>
             </div>
-             <div className="border-t border-gray-200 pt-3 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold">SCS</div>
-                <div>
-                    <p className="text-sm font-semibold">{course.author}</p>
-                    <p className="text-xs text-gray-500">In {course.primaryCategory}</p>
+            <div>
+                <div className="flex justify-between items-center text-sm text-gray-500 mb-4">
+                    <div className="flex items-center gap-2">
+                        <Users size={16} />
+                        <span>{course.students}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <MessageSquare size={16} />
+                        <span>{course.comments}</span>
+                    </div>
+                </div>
+                <div className="border-t border-gray-200 pt-3 flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold">SCS</div>
+                    <div>
+                        <p className="text-sm font-semibold">{course.author}</p>
+                        <p className="text-xs text-gray-500">In {course.primaryCategory}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -223,6 +233,9 @@ const CourseCard = ({ course }: { course: (typeof courses)[0] & { isTopCourse?: 
 
 
 export default function CoursesLivePage() {
+  const topCourses = courses.filter(c => c.isTopCourse);
+  const otherCourses = courses.filter(c => !c.isTopCourse);
+
   return (
     <div className="container mx-auto max-w-7xl px-4 py-8">
       <div className="flex flex-col lg:flex-row gap-8">
@@ -260,17 +273,30 @@ export default function CoursesLivePage() {
 
         {/* Main Content */}
         <main className="w-full lg:w-3/4">
-          <div className="flex justify-end mb-4">
-             <div className="relative">
+          
+          {/* Top Courses Section */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold font-space-grotesk mb-6 border-b pb-3">Top Courses for 2026</h2>
+            <div className="space-y-8">
+              {topCourses.map((course) => (
+                <CourseCard key={course.title} course={course} isFeatured={true} />
+              ))}
+            </div>
+          </section>
+
+          {/* All Other Courses Section */}
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-2xl font-bold font-space-grotesk">All Courses</h2>
+            <div className="relative">
                 <button className="flex items-center gap-2 border rounded-md px-4 py-2 text-sm">
                     <span>Release Date (newest first)</span>
                     <ChevronDown size={16} />
                 </button>
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course, index) => (
-              <CourseCard key={index} course={course} />
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+            {otherCourses.map((course) => (
+              <CourseCard key={course.title} course={course} />
             ))}
           </div>
         </main>
