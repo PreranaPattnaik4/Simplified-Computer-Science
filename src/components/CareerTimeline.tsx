@@ -1,4 +1,4 @@
-import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket, Milestone } from "lucide-react";
+import { Target, BookOpen, Award, Briefcase, Code, Linkedin, FileText, Lightbulb, Rocket, Milestone, FolderKanban, BrainCircuit } from "lucide-react";
 
 export default function CareerTimeline() {
   const steps = [
@@ -16,6 +16,22 @@ export default function CareerTimeline() {
       fullTitle: "Build Skills with Free Courses & Hands-On Projects",
       description: "Enroll in courses that align with your career goals and start building practical skills. Simplified Computer Science offers free, high-quality tutorials and courses designed to simplify complex topics in AI, programming, and technology. As you progress through the lessons, complement your learning with hands-on projects to strengthen your understanding. Build a portfolio of your work to showcase your skills to potential employers.",
       icon: BookOpen,
+      side: "right",
+    },
+    {
+      title: "Projects",
+      subtitle: "Apply your knowledge.",
+      fullTitle: "Build Real-World Projects",
+      description: "Put your skills to the test by building real-world projects. This is a crucial step to solidify your understanding and to create a portfolio that showcases your abilities to potential employers. Start with small projects and gradually move to more complex ones. Contribute to open-source projects to gain experience collaborating with other developers.",
+      icon: FolderKanban,
+      side: "left",
+    },
+    {
+      title: "Hackathons",
+      subtitle: "Compete and innovate.",
+      fullTitle: "Participate in Hackathons",
+      description: "Hackathons are intense, collaborative events where you can build innovative solutions in a short amount of time. They are an excellent way to learn new technologies, work in a team, and network with other passionate individuals and companies. Winning or even just participating in hackathons can be a great addition to your resume.",
+      icon: BrainCircuit,
       side: "right",
     },
     {
@@ -149,7 +165,7 @@ export default function CareerTimeline() {
                   </div>
 
                   {/* Mid-section headline */}
-                  {index === 3 && (
+                  {index === 4 && (
                     <div className="my-16 text-center px-4">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
                         Advancing Your Career: From Gaining Experience to Becoming an Industry Expert
