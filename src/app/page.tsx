@@ -42,6 +42,7 @@ import TrendingBlogs from '@/components/TrendingBlogs';
 import LimitlessLearning from '@/components/LimitlessLearning';
 import CareerTimeline from '@/components/CareerTimeline';
 import placeholderImages from '@/app/lib/placeholder-images.json';
+import SCSLearningPaths from '@/components/SCSLearningPaths';
 
 
 const whatWeOffer = [
@@ -270,6 +271,9 @@ export default function HomePage() {
                 ))}
             </div>
         </section>
+
+        {/* New Learning Paths Section */}
+        <SCSLearningPaths />
 
         {/* Section 3: Trending Blogs */}
         <TrendingBlogs />

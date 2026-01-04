@@ -24,5 +24,8 @@
     "resourcesHero1": { "src": "https://images.pexels.com/photos/7047292/pexels-photo-7047292.jpeg", "hint": "vr future" },
     "resourcesHero2": { "src": "https://images.pexels.com/photos/3520665/pexels-photo-3520665.jpeg", "hint": "hackathon code" },
     "resourcesHero3": { "src": "https://images.pexels.com/photos/8386363/pexels-photo-8386363.jpeg", "hint": "robotics circuitry" },
-    "dashboardCourse": { "src": "https://picsum.photos/seed/html-css/400/225", "hint": "web development" }
+    "dashboardCourse": { "src": "https://picsum.photos/seed/html-css/400/225", "hint": "web development" },
+    "learningPathRoadmap": { "src": "https://picsum.photos/seed/roadmap/1200/400", "hint": "product roadmap" },
+    "complexDiagram": { "src": "https://picsum.photos/seed/complex/200/200", "hint": "complex diagram" },
+    "simpleDiagram": { "src": "https://picsum.photos/seed/simple/200/200", "hint": "simple diagram" }
 }
