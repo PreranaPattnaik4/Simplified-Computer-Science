@@ -1,4 +1,5 @@
 import { Instagram, Linkedin, Youtube } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -6,7 +7,9 @@ export default function Footer() {
       <div className="container mx-auto max-w-7xl px-4 py-16">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">SIMPLIFIEDCOMPUTERSCIENCE</h3>
+            <div className="mb-4">
+              <Image src="https://i.postimg.cc/wMJrsmsG/1.png" alt="Simplified Computer Science Logo" width={150} height={40} />
+            </div>
             <p>Welcome to Simplified Computer Science, your ultimate guide to the world of technology. Our mission is to make computer science accessible and understandable for everyone, from beginners to experts.</p>
           </div>
           <div>
