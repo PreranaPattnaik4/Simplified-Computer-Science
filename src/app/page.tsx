@@ -183,6 +183,36 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* Section 2: Empowering Innovation */}
+        <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
+          <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
+            Simplifying Computer Science | Empowering Innovation: Projects Hackathons and Internships
+          </h2>
+          <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="col-span-1 space-y-4">
+                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Artificial Intelligence Specialists</div>
+                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Generative AI</div>
+                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Machine Learning</div>
+                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Python</div>
+                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Data Scientists And Analysts</div>
+              </div>
+              <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
+                  <h3 className="text-2xl font-bold mb-4 font-space-grotesk">Python: The Heart of Modern AI and LLM Development</h3>
+                  <p className="mb-6 text-muted-foreground">Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.</p>
+                  <h4 className="text-xl font-bold mb-2 font-space-grotesk">Key Features of Python Development:</h4>
+                  <ul className="list-disc list-inside space-y-2 mb-6">
+                      <li>Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.</li>
+                      <li>Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.</li>
+                      <li>Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.</li>
+                      <li>Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.</li>
+                       <li>Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.</li>
+                  </ul>
+                   <p className="text-muted-foreground">With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.</p>
+              </div>
+          </div>
+        </section>
+
         {/* Section 8: "What We Offer" Grid */}
         <section className="container mx-auto max-w-7xl px-4 py-16">
             <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
@@ -285,37 +315,6 @@ export default function HomePage() {
           </button>
         </section>
         
-        {/* Section 2: Empowering Innovation */}
-        <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
-          <h2 className="text-2xl font-semibold font-space-grotesk tracking-[0.2em] text-gray-800 uppercase">
-            Simplifying Computer Science | Empowering Innovation: Projects Hackathons and Internships
-          </h2>
-          <div className="w-24 h-px bg-accent mx-auto mt-4 mb-12"></div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              <div className="col-span-1 space-y-4">
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Artificial Intelligence Specialists</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Generative AI</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Machine Learning</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Python</div>
-                  <div className="bg-black p-6 rounded-lg text-white font-bold text-lg">Data Scientists And Analysts</div>
-              </div>
-              <div className="col-span-2 rounded-lg border bg-card p-8 text-card-foreground text-left">
-                  <h3 className="text-2xl font-bold mb-4 font-space-grotesk">Python: The Heart of Modern AI and LLM Development</h3>
-                  <p className="mb-6 text-muted-foreground">Python is a powerful, easy-to-learn programming language that supports multiple programming paradigms, including procedural, object-oriented, and functional programming. It is widely used for web development, automation, machine learning, data analysis, and artificial intelligence. Python’s extensive standard library and vibrant community contribute to its popularity in various industries.</p>
-                  <h4 className="text-xl font-bold mb-2 font-space-grotesk">Key Features of Python Development:</h4>
-                  <ul className="list-disc list-inside space-y-2 mb-6">
-                      <li>Readability: Python’s simple syntax makes it easy to read and write, reducing the complexity of software development.</li>
-                      <li>Extensive Libraries: Python offers a vast collection of libraries and frameworks, such as Django, Flask, NumPy, and pandas, that speed up development.</li>
-                      <li>Cross-Platform Compatibility: Python runs on various platforms, including Windows, Linux, and macOS, making it a versatile choice for developers.</li>
-                      <li>Automation & Scripting: Python is commonly used for automating tasks, from simple scripts to complex workflows.</li>
-                       <li>Data Science & Machine Learning: Python is a go-to language for data analysis, statistical computing, and building machine learning models, with libraries like TensorFlow, scikit-learn, and Keras.</li>
-                  </ul>
-                   <p className="text-muted-foreground">With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.</p>
-              </div>
-          </div>
-        </section>
-
-        
         {/* Section 4: Gateway to Mastering CS & AI */}
         <LimitlessLearning />
 
@@ -380,3 +379,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
