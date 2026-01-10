@@ -7,6 +7,14 @@ export default function TrendingBlogs() {
   const blogs = [
     {
       author: "Prerana",
+      categories: ["Career Tips", "Professional Skills"],
+      date: "June 5, 2024",
+      title: "Career Tips for Tech Professionals: Navigating Your Path to Success",
+      description: "Navigating a successful career in tech can be both exciting and challenging. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.",
+      link: "#",
+    },
+    {
+      author: "Prerana",
       categories: ["Artificial Intelligence", "Futures Tech", "Insight blogs"],
       date: "May 23, 2023",
       title: "Understanding Artificial Intelligence: A Beginner's Guide to AI | Simplified Computer Science",
@@ -21,14 +29,7 @@ export default function TrendingBlogs() {
       description: "In the world of digital art, AI is transforming how we create. Through my collection, “AI Artistry Unleashed,” I’m…",
       link: "#",
     },
-    {
-      author: "Prerana",
-      categories: ["Artificial Intelligence", "Futures Tech"],
-      date: "May 23, 2023",
-      title: "Top Free AI Tools to Supercharge Your Productivity and Creativity in 2025",
-      description: "Edit Content Click on the Edit Content button to edit/add the content. Artificial intelligence continues to revolutionize the way we…",
-      link: "#",
-    },
+    
   ];
 
   return (
