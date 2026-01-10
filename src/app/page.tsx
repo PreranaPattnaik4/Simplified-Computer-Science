@@ -145,7 +145,7 @@ export default function HomePage() {
                           }}
                         ></div>
 
-                        <div className="absolute -bottom-10 -left-10">
+                        <div className="absolute -bottom-10 -left-10 hidden md:block">
                             <div className="relative w-24 h-24">
                                 <div className="absolute inset-0 border-2 border-black"></div>
                                 <div className="absolute inset-2 bg-accent flex items-center justify-center">
@@ -211,23 +211,6 @@ export default function HomePage() {
                    <p className="text-muted-foreground">With Python’s flexibility and powerful features, developers can create anything from web applications to data-driven solutions and AI models, making it an essential tool in modern development.</p>
               </div>
           </div>
-        </section>
-
-        {/* Section 8: "What We Offer" Grid */}
-        <section className="container mx-auto max-w-7xl px-4 py-16">
-            <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {whatWeOffer.map((item, index) => (
-                    <div key={index} className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm">
-                        {item.tag && <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-pink-500 text-white text-xs font-bold">{item.tag}</span>}
-                        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-accent">
-                            {React.cloneElement(item.icon, { className: "h-8 w-8" })}
-                        </div>
-                        <h3 className="mb-2 text-xl font-semibold font-space-grotesk">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </div>
-                ))}
-            </div>
         </section>
 
         {/* Hero Image Accordion */}
@@ -298,6 +281,22 @@ export default function HomePage() {
             </div>
         </section>
 
+        {/* Section 8: "What We Offer" Grid */}
+        <section className="container mx-auto max-w-7xl px-4 py-16">
+            <h2 className="mb-12 text-center text-4xl font-bold font-space-grotesk">What We Offer</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {whatWeOffer.map((item, index) => (
+                    <div key={index} className="relative flex flex-col items-center text-center p-6 border rounded-lg shadow-sm">
+                        {item.tag && <span className="absolute top-2 right-2 py-1 px-3 rounded-full bg-pink-500 text-white text-xs font-bold">{item.tag}</span>}
+                        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-secondary text-accent">
+                            {React.cloneElement(item.icon, { className: "h-8 w-8" })}
+                        </div>
+                        <h3 className="mb-2 text-xl font-semibold font-space-grotesk">{item.title}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
 
         {/* Hero Content */}
         <section className="container mx-auto max-w-7xl px-4 py-16 text-center">
@@ -329,11 +328,11 @@ export default function HomePage() {
         {/* Section 6: Industry Solutions */}
         <IndustrySolutions />
 
+        {/* The SCS Ecosystem Section */}
+        <SCSLearningPaths />
+
         {/* Section 7: Step-by-Step Career Timeline */}
         <CareerTimeline />
-
-        {/* New Learning Paths Section */}
-        <SCSLearningPaths />
 
         {/* Section 3: Trending Blogs */}
         <TrendingBlogs />
@@ -379,5 +378,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
