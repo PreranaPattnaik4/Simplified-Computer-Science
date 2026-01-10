@@ -44,6 +44,7 @@ import LimitlessLearning from '@/components/LimitlessLearning';
 import CareerTimeline from '@/components/CareerTimeline';
 import placeholderImages from '@/app/lib/placeholder-images.json';
 import SCSLearningPaths from '@/components/SCSLearningPaths';
+import Link from 'next/link';
 
 
 const whatWeOffer = [
@@ -157,23 +158,27 @@ export default function HomePage() {
                         </div>
                     </div>
                     <div>
-                        <h1 className="text-7xl md:text-8xl font-bold font-space-grotesk tracking-tighter leading-none">
-                            DESIGN <br /> CULTURE
+                        <h1 className="text-5xl md:text-6xl font-bold font-space-grotesk tracking-tighter leading-none">
+                            SIMPLIFIED <br /> COMPUTER SCIENCE
                         </h1>
                         <div className="mt-8 grid md:grid-cols-2 gap-8">
                             <div>
-                                <h2 className="text-3xl font-light leading-tight">
-                                    Delightful remarkably mr on announcing themselves entreaties favourable.
+                                <h2 className="text-2xl font-light leading-tight">
+                                    Making Technology Simple, Practical, and Accessible
                                 </h2>
-                                <button className="mt-6 bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-colors">
-                                    EXPLORE COLLECTION
-                                </button>
+                                <Link href="/courses-live">
+                                    <button className="mt-6 bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-colors">
+                                        START LEARNING
+                                    </button>
+                                </Link>
                             </div>
                             <div>
                                 <p className="text-muted-foreground">
-                                    Of on affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance.
+                                    Learn computer science, artificial intelligence, and modern tech skills through easy-to-follow tutorials, clear roadmaps, and practical guidance for real-world IT learning.
                                 </p>
-                                <a href="#" className="mt-2 inline-block font-semibold underline underline-offset-4">Read More</a>
+                                <Link href="/courses-live" className="mt-2 inline-block font-semibold underline underline-offset-4">
+                                    Explore Tutorials
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -378,5 +383,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
