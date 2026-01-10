@@ -27,7 +27,7 @@ export default function Footer() {
             <h3 className="mb-4 text-lg font-bold text-white font-space-grotesk">EXPLORER</h3>
             <ul className="space-y-2">
               <li><a href="/blog" className="hover:text-accent">Blogs</a></li>
-              <li><a href="/courses" className="hover:text-accent">Courses Live!</a></li>
+              <li><a href="/courses-live" className="hover:text-accent">Courses Live!</a></li>
               <li><a href="/resources" className="hover:text-accent">Resources</a></li>
               <li><a href="/services" className="hover:text-accent">Services</a></li>
             </ul>
@@ -38,7 +38,6 @@ export default function Footer() {
             <div className="mt-4 flex space-x-4">
               <a href="#"><Instagram className="h-6 w-6 hover:text-accent"/></a>
               <a href="#"><Linkedin className="h-6 w-6 hover:text-accent"/></a>
-              <a href="#">{/* Medium Icon */}</a>
               <a href="#"><Youtube className="h-6 w-6 hover:text-accent"/></a>
             </div>
           </div>
