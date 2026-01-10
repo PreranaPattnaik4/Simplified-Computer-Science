@@ -27,5 +27,8 @@
     "dashboardCourse": { "src": "https://picsum.photos/seed/html-css/400/225", "hint": "web development" },
     "learningPathRoadmap": { "src": "https://picsum.photos/seed/roadmap/1200/400", "hint": "product roadmap" },
     "complexDiagram": { "src": "https://picsum.photos/seed/complex/200/200", "hint": "complex diagram" },
-    "simpleDiagram": { "src": "https://picsum.photos/seed/simple/200/200", "hint": "simple diagram" }
+    "simpleDiagram": { "src": "https://picsum.photos/seed/simple/200/200", "hint": "simple diagram" },
+    "designCulture": { "src": "https://picsum.photos/seed/designculture/600/600", "hint": "fashion portrait" }
 }
+
+    

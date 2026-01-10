@@ -30,6 +30,7 @@ import {
   HelpCircle,
   FolderKanban,
   FileBadge,
+  ArrowDown,
 } from 'lucide-react';
 import {
   Accordion,
@@ -123,22 +124,80 @@ export default function HomePage() {
   return (
     <div className="bg-background text-foreground">
       <main>
+        {/* New Hero Section */}
+        <section className="bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    <div className="relative aspect-square">
+                        <Image
+                            src={placeholderImages.designCulture.src}
+                            alt="Design Culture"
+                            fill
+                            className="object-cover rounded-lg"
+                            data-ai-hint={placeholderImages.designCulture.hint}
+                        />
+                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-1 p-1">
+                            {[...Array(16)].map((_, i) => (
+                                <div key={i} className="border border-white/20"></div>
+                            ))}
+                        </div>
+                        <div className="absolute inset-0 grid grid-cols-4 grid-rows-4 gap-4 p-4">
+                            <div className="bg-accent rounded-sm col-start-2 row-start-2"></div>
+                            <div className="bg-accent rounded-sm col-start-1 row-start-3 col-span-2"></div>
+                            <div className="bg-accent rounded-sm col-start-4 row-start-4"></div>
+                        </div>
+
+                        <div className="absolute -bottom-10 -left-10">
+                            <div className="relative w-24 h-24">
+                                <div className="absolute inset-0 border-2 border-black"></div>
+                                <div className="absolute inset-2 bg-accent flex items-center justify-center">
+                                    <ArrowDown className="w-8 h-8 text-black" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 className="text-7xl md:text-8xl font-bold font-space-grotesk tracking-tighter leading-none">
+                            DESIGN <br /> CULTURE
+                        </h1>
+                        <div className="mt-8 grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h2 className="text-3xl font-light leading-tight">
+                                    Delightful remarkably mr on announcing themselves entreaties favourable.
+                                </h2>
+                                <button className="mt-6 bg-black text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-colors">
+                                    EXPLORE COLLECTION
+                                </button>
+                            </div>
+                            <div>
+                                <p className="text-muted-foreground">
+                                    Of on affixed civilly moments promise explain fertile in. Assurance advantage belonging happiness departure so of. Now improving and one sincerity intention allowance.
+                                </p>
+                                <a href="#" className="mt-2 inline-block font-semibold underline underline-offset-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         {/* Hero Image Accordion */}
         <section className="w-full bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 <div className="flex gap-2 h-80 md:h-96 rounded-lg overflow-hidden">
                 {panels.map((panel) => {
                     const isActive = activePanel === panel.id;
-                    const activeWidth = 40;
+                    const activeWidth = 40; // Decreased width for active panel
                     const inactiveWidth = (100 - activeWidth) / (panels.length - 1);
                     const width = isActive ? activeWidth : inactiveWidth;
 
                     return (
                     <div
                         key={panel.id}
-                        className={`relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg flex-1`}
+                        className={`relative overflow-hidden cursor-pointer group transition-all duration-500 ease-out rounded-lg`}
                         style={{
-                        flex: `${width} 1 auto`,
+                            width: `${width}%`,
+                            flexShrink: 0,
                         }}
                         onClick={() => setActivePanel(panel.id)}
                         onMouseEnter={() => setActivePanel(panel.id)}
@@ -319,3 +378,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
