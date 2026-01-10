@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div>
             <div className="mb-4">
-              <Image src="https://i.postimg.cc/wMJrsmsG/1.png" alt="Simplified Computer Science Logo" width={150} height={40} />
+              <Image src="https://i.postimg.cc/ZYVB1MBN/1.png" alt="Simplified Computer Science Logo" width={150} height={40} />
             </div>
             <p>Welcome to Simplified Computer Science, your ultimate guide to the world of technology. Our mission is to make computer science accessible and understandable for everyone, from beginners to experts.</p>
           </div>
