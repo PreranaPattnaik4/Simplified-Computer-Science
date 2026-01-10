@@ -13,7 +13,7 @@
     "course11": { "src": "https://picsum.photos/seed/course11/500/300", "hint": "compiler code" },
     "course12": { "src": "https://picsum.photos/seed/course12/500/300", "hint": "javascript code" },
     "course13": { "src": "https://picsum.photos/seed/course13/500/300", "hint": "python data science" },
-    "homeHero1": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/11/Screenshot-1260-1.png", "hint": "career roadmap" },
+    "homeHero1": { "src": "https://i.postimg.cc/xTdhgwQw/digital-art-ai-technology-background.jpg", "hint": "career roadmap" },
     "homeHero2": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/people-wearing-futuristic-high-tech-virtual-reality-glasses-scaled.jpg", "hint": "futuristic vr" },
     "homeHero3": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2025/03/futurism-perspective-digital-nomads-lifestyle-Copy-scaled.jpg", "hint": "digital nomad" },
     "homeHero4": { "src": "http://simplifiedcomputerscience.com/wp-content/uploads/2024/10/ai-chip-intelligence-technology-deep-learning-scaled.jpg", "hint": "ai chip" },
