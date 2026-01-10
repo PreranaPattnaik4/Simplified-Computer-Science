@@ -54,7 +54,7 @@ export default function Header() {
           <div className="absolute left-1/2 -translate-x-1/2 group">
               <Link href="/" className="cursor-pointer">
                 <div className="transition-transform duration-300 ease-in-out group-hover:scale-110">
-                    <Image src="https://i.postimg.cc/xTnRfMqk/simplifiedcomputerscience.png" alt="Simplified Computer Science Logo" width={120} height={40} priority />
+                    <Image src="https://i.postimg.cc/rs90fh6y/3.png" alt="Simplified Computer Science Logo" width={120} height={40} priority />
                 </div>
               </Link>
           </div>
