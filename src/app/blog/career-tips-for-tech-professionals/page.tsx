@@ -2,22 +2,20 @@
 import { User, Calendar, Folder } from 'lucide-react';
 import Image from 'next/image';
 
-const BlogHeader = ({ title, category, date }: { title: string, category: string, date: string }) => (
-    <div className="text-center mb-12">
-        <div className="text-sm uppercase text-accent font-semibold tracking-wider mb-2">{category}</div>
-        <h1 className="text-4xl md:text-5xl font-bold font-space-grotesk text-gray-900 leading-tight">
+const BlogHeader = ({ title, description }: { title: string, description: string }) => (
+    <section className="bg-gradient-to-r from-gray-50 via-gray-100 to-gray-200 py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto text-left">
+        <div className="w-full md:w-2/3">
+          <div className="h-1 w-16 bg-accent mb-4"></div>
+          <h1 className="text-4xl md:text-5xl font-bold font-space-grotesk text-gray-900 leading-tight">
             {title}
-        </h1>
-        <div className="flex justify-center items-center gap-4 mt-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-                <User size={16} /> Prerana
-            </div>
-            <span>|</span>
-            <div className="flex items-center gap-2">
-                <Calendar size={16} /> {date}
-            </div>
+          </h1>
+          <p className="mt-4 text-lg text-gray-600">
+            {description}
+          </p>
         </div>
-    </div>
+      </div>
+    </section>
 );
 
 const CareerTip = ({ number, title, children }: { number: number, title: string, children: React.ReactNode }) => (
@@ -28,18 +26,32 @@ const CareerTip = ({ number, title, children }: { number: number, title: string,
 );
 
 export default function CareerTipsPage() {
+  const pageDescription = "Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation.";
+  
   return (
     <div className="bg-white">
+      <BlogHeader 
+          title="Career Tips for Tech Professionals: Navigating Your Path to Success"
+          description={pageDescription}
+      />
       <main className="container mx-auto max-w-4xl px-4 py-16">
-        <BlogHeader 
-            title="Career Tips for Tech Professionals: Navigating Your Path to Success"
-            category="Career Tips, Professional Skills"
-            date="June 5, 2024"
-        />
+        <div className="flex justify-start items-center gap-4 mb-8 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+                <User size={16} /> Prerana
+            </div>
+            <span>|</span>
+            <div className="flex items-center gap-2">
+                <Calendar size={16} /> June 5, 2024
+            </div>
+            <span>|</span>
+            <div className="flex items-center gap-2">
+                <Folder size={16} /> Career Tips, Professional Skills
+            </div>
+        </div>
         
         <div className="prose lg:prose-xl max-w-none mx-auto text-muted-foreground">
             <p className="lead text-xl mb-8">
-                Navigating a successful career in tech can be both exciting and challenging, given the industry’s rapid pace of change and constant innovation. Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.
+                Whether you’re just starting out or looking to level up your career, it’s important to focus not only on technical skills but also on building a strong foundation of soft skills, networking, and continuous learning. By staying adaptable and setting clear goals, tech professionals can position themselves for long-term success and growth in this dynamic field. Here are some key career tips to help you chart your path and reach your full potential in the tech industry.
             </p>
         </div>
 
