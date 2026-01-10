@@ -85,7 +85,7 @@ const faqItems = [
 ];
 
 export default function HomePage() {
-  const [activePanel, setActivePanel] = useState(0);
+  const [activePanel, setActivePanel] = useState(2);
 
   const panels = [
     {
@@ -126,10 +126,10 @@ export default function HomePage() {
         {/* Hero Image Accordion */}
         <section className="w-full bg-black py-16 md:py-24 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
-                <div className="flex gap-2 h-64 md:h-80 rounded-lg overflow-hidden">
+                <div className="flex gap-2 h-80 md:h-96 rounded-lg overflow-hidden">
                 {panels.map((panel) => {
                     const isActive = activePanel === panel.id;
-                    const activeWidth = 65;
+                    const activeWidth = 40;
                     const inactiveWidth = (100 - activeWidth) / (panels.length - 1);
                     const width = isActive ? activeWidth : inactiveWidth;
 
