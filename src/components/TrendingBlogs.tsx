@@ -2,6 +2,8 @@
 'use client';
 import React from 'react';
 import { ArrowRight, User, Calendar } from "lucide-react";
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 export default function TrendingBlogs() {
   const blogs = [
@@ -75,6 +77,14 @@ export default function TrendingBlogs() {
               </p>
             </div>
           ))}
+        </div>
+         <div className="text-center mt-12">
+            <Link href="/blog">
+                <Button>
+                    View All Blogs
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+            </Link>
         </div>
       </div>
     </section>
