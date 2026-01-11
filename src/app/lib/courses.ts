@@ -312,7 +312,7 @@ We recommend using the Anaconda distribution, which packages Python with essenti
 1.  Download and install Anaconda from the official website.
 2.  Open the Anaconda Navigator and launch a Jupyter Notebook or Spyder IDE.
 3.  Verify your installation by running \`python --version\` and \`conda list\` in your terminal.
-<br/>
+
 ### Tip
 Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and a`
                 },
