@@ -613,7 +613,54 @@ print(squares_comp) # [0, 1, 4, 9, 16]
     isTopCourse: false,
     syllabus: [
         {
-            title: "Module 1: Front-End Development",
+            title: "Module 1: Introduction to Web Development",
+            lessons: [
+                {
+                    slug: "what-is-web-development",
+                    title: "What is Web Development?",
+                    type: "content",
+                    content: `Welcome to the world of web development! At its core, web development is the work involved in developing a website for the Internet. This can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services.
+
+Web development is broadly divided into two main areas:
+*   **Front-End Development:** This is the part of the website that users interact with directly. It's often called the "client-side" of the application. It includes everything that users experience directly: text colors and styles, images, graphs and tables, buttons, and navigation menus.
+*   **Back-End Development:** This is the "server-side" of a website. It stores and organizes data, and also makes sure everything on the client-side of the website works fine. It is the part of the website that you cannot see and interact with. It is the software that runs on servers.
+
+This course will guide you through both front-end and back-end technologies, giving you the skills to become a full-stack developer.`
+                },
+                {
+                    slug: "how-websites-work",
+                    title: "How Websites Work: Clients and Servers",
+                    type: "content",
+                    content: `Every time you open a website in your browser, a complex interaction happens between your computer (the **client**) and a powerful computer elsewhere (the **server**).
+
+Here's a simple breakdown:
+1.  **The Client (Your Browser):** When you type a website address (like www.simplifiedcomputerscience.com) into your browser, you are making a request. Your browser is the client.
+2.  **The Request (HTTP):** The browser sends a request to the server using the Hypertext Transfer Protocol (HTTP). This request asks the server for the files needed to display the website.
+3.  **The Server:** The server is a computer that stores the website's files (HTML, CSS, JavaScript, images, etc.). When it receives a request, it finds the required files.
+4.  **The Response:** The server sends the files back to your browser.
+5.  **Rendering:** Your browser receives the files and "renders" them, which means it interprets the code (HTML for structure, CSS for styling, JavaScript for interactivity) and displays the visual website you see on your screen.
+
+Understanding this client-server relationship is fundamental to web development.`
+                },
+                {
+                    slug: "essential-tools",
+                    title: "Essential Tools for Web Developers",
+                    type: "content",
+                    content: `To start your web development journey, you only need a few essential tools.
+
+*   **Code Editor:** This is where you'll write your code. While you could use a simple text editor, specialized code editors offer features like syntax highlighting, auto-completion, and error checking.
+    *   **Popular Choice:** [Visual Studio Code (VS Code)](https://code.visualstudio.com/) is a free, powerful, and highly popular code editor used by millions of developers. We highly recommend starting with it.
+
+*   **Web Browser:** You'll need a modern web browser to view your websites and use its developer tools.
+    *   **Popular Choices:** Google Chrome, Mozilla Firefox, and Microsoft Edge are all excellent choices. They come with powerful "Developer Tools" (often opened by pressing F12) that let you inspect your HTML, CSS, and JavaScript in real-time.
+
+*   **Version Control (Git):** Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+    *   **The Standard:** Git is the most widely used version control system. It allows you to track your project's history and collaborate with other developers. [GitHub](https://github.com/) is a platform that hosts Git repositories and is essential for modern development workflows.`
+                }
+            ]
+        },
+        {
+            title: "Module 2: Front-End Development",
             lessons: [
                 { 
                     slug: "frontend-intro", 
@@ -662,7 +709,7 @@ print(squares_comp) # [0, 1, 4, 9, 16]
             ]
         },
         {
-            title: "Module 2: Back-End Development",
+            title: "Module 3: Back-End Development",
             lessons: [
                 {
                     slug: "backend-intro",
@@ -710,7 +757,7 @@ print(squares_comp) # [0, 1, 4, 9, 16]
             ]
         },
         {
-            title: "Module 3: Full-Stack Development",
+            title: "Module 4: Full-Stack Development",
             lessons: [
                 {
                     slug: "fullstack-intro",
@@ -737,7 +784,7 @@ print(squares_comp) # [0, 1, 4, 9, 16]
             ]
         },
         {
-            title: "Module 4: Security & Optimization",
+            title: "Module 5: Security & Optimization",
             lessons: [
                 {
                     slug: "web-security",
@@ -780,3 +827,5 @@ export function getCourses() {
 export function getCourseBySlug(slug: string) {
   return courses.find(course => course.slug === slug);
 }
+
+    
