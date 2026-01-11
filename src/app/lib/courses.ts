@@ -562,7 +562,8 @@ print(squares_comp) # [0, 1, 4, 9, 16]
             lessons: [
                 { 
                     slug: "what-is-cs", 
-                    title: "What is Computer Science?", 
+                    title: "What is Computer Science?",
+                    type: "content",
                     content: `Computer Science is the study of computers and computational systems. It involves understanding how computers process information, how software is developed, and how data is handled. While many think of Computer Science as just coding or programming, the field is far more extensive. It covers areas like data structures, algorithms, artificial intelligence, databases, and much more.\n\nFor beginners, it’s helpful to think of Computer Science as the science of problem-solving using computers. The tools and techniques learned here are applicable to solving real-world problems efficiently and effectively.`
                 }
             ]
@@ -570,29 +571,202 @@ print(squares_comp) # [0, 1, 4, 9, 16]
         {
             title: "Module 2: Key Areas of Computer Science",
             lessons: [
-                { slug: "algorithms-data-structures", title: "Algorithms and Data Structures", content: "Algorithms are step-by-step instructions that tell the computer how to perform a task. Understanding algorithms allows you to write code that solves problems in an optimized way.\n\nData Structures organize and store data. Common types include arrays, linked lists, trees, and graphs. Learning these structures is fundamental because they affect the performance of your program." },
-                { slug: "programming-languages", title: "Programming Languages", content: "Programming is at the heart of Computer Science. Some popular programming languages include Python, Java, C++, and JavaScript. Each language has its strengths, and knowing the right one for the task is essential.\n\nThe 2024 syllabus focuses on Python for beginners due to its readability and widespread use in educational settings." },
-                { slug: "software-engineering", title: "Software Engineering", content: "Software Engineering deals with designing, building, and maintaining software applications. It includes methodologies like Agile and Waterfall, as well as tools for version control (e.g., Git)." },
-                { slug: "ai-ml", title: "Artificial Intelligence and Machine Learning", content: "AI is the simulation of human intelligence processes by machines. It includes Machine Learning, where computers learn from data to make decisions without explicit programming. The 2024 syllabus emphasizes the growing importance of AI in fields like healthcare, finance, and robotics." },
-                { slug: "databases", title: "Databases", content: "Understanding how to organize, store, and retrieve data is crucial for any programmer. Databases like MySQL and MongoDB are commonly used in real-world applications." },
-                { slug: "networking-security", title: "Networking and Security", content: "Networking is about connecting computers and systems, allowing them to communicate and share resources. It covers everything from local networks to the global Internet.\n\nCybersecurity ensures the protection of data and systems from malicious threats. In the 2024 syllabus, this area focuses on encryption, firewalls, and secure software development practices." }
+                { slug: "algorithms-data-structures", title: "Algorithms and Data Structures", type: "content", content: "Algorithms are step-by-step instructions that tell the computer how to perform a task. Understanding algorithms allows you to write code that solves problems in an optimized way.\n\nData Structures organize and store data. Common types include arrays, linked lists, trees, and graphs. Learning these structures is fundamental because they affect the performance of your program." },
+                { slug: "programming-languages", title: "Programming Languages", type: "content", content: "Programming is at the heart of Computer Science. Some popular programming languages include Python, Java, C++, and JavaScript. Each language has its strengths, and knowing the right one for the task is essential.\n\nThe 2024 syllabus focuses on Python for beginners due to its readability and widespread use in educational settings." },
+                { slug: "software-engineering", title: "Software Engineering", type: "content", content: "Software Engineering deals with designing, building, and maintaining software applications. It includes methodologies like Agile and Waterfall, as well as tools for version control (e.g., Git)." },
+                { slug: "ai-ml", title: "Artificial Intelligence and Machine Learning", type: "content", content: "AI is the simulation of human intelligence processes by machines. It includes Machine Learning, where computers learn from data to make decisions without explicit programming. The 2024 syllabus emphasizes the growing importance of AI in fields like healthcare, finance, and robotics." },
+                { slug: "databases", title: "Databases", type: "content", content: "Understanding how to organize, store, and retrieve data is crucial for any programmer. Databases like MySQL and MongoDB are commonly used in real-world applications." },
+                { slug: "networking-security", title: "Networking and Security", type: "content", content: "Networking is about connecting computers and systems, allowing them to communicate and share resources. It covers everything from local networks to the global Internet.\n\nCybersecurity ensures the protection of data and systems from malicious threats. In the 2024 syllabus, this area focuses on encryption, firewalls, and secure software development practices." }
             ]
         },
         {
             title: "Module 3: The 2024 Syllabus Overview",
             lessons: [
-                { slug: "programming-fundamentals", title: "Fundamentals of Programming", content: "Students are introduced to basic programming concepts, using languages like Python. Topics covered include variables, data types, loops, conditionals, and functions." },
-                { slug: "problem-solving-techniques", title: "Problem-Solving Techniques", content: "Problem-solving is a critical skill for any computer scientist. The syllabus encourages students to break down problems into smaller, manageable parts using algorithms and data structures." },
-                { slug: "computer-systems", title: "Understanding Computer Systems", content: "Basic hardware concepts like CPUs, memory, and storage are covered, providing students with an understanding of how software interacts with hardware." },
-                { slug: "web-development-intro", title: "Introduction to Web Development", content: "Basic HTML, CSS, and JavaScript are introduced to help students understand how websites are created and structured." },
-                { slug: "ethical-computing", title: "Ethical Computing", content: "With technology advancing rapidly, students are also taught the ethical implications of computing. This includes data privacy, the environmental impact of technology, and the importance of ethical decision-making in software development." }
+                { slug: "programming-fundamentals", title: "Fundamentals of Programming", type: "content", content: "Students are introduced to basic programming concepts, using languages like Python. Topics covered include variables, data types, loops, conditionals, and functions." },
+                { slug: "problem-solving-techniques", title: "Problem-Solving Techniques", type: "content", content: "Problem-solving is a critical skill for any computer scientist. The syllabus encourages students to break down problems into smaller, manageable parts using algorithms and data structures." },
+                { slug: "computer-systems", title: "Understanding Computer Systems", type: "content", content: "Basic hardware concepts like CPUs, memory, and storage are covered, providing students with an understanding of how software interacts with hardware." },
+                { slug: "web-development-intro", title: "Introduction to Web Development", type: "content", content: "Basic HTML, CSS, and JavaScript are introduced to help students understand how websites are created and structured." },
+                { slug: "ethical-computing", title: "Ethical Computing", type: "content", content: "With technology advancing rapidly, students are also taught the ethical implications of computing. This includes data privacy, the environmental impact of technology, and the importance of ethical decision-making in software development." }
             ]
         },
         {
             title: "Module 4: Your Journey in Computer Science",
             lessons: [
-                { slug: "why-learn-cs", title: "Why Learn Computer Science?", content: "Versatility and Career Opportunities: Computer Science is a gateway to a wide range of careers. From software development to data science, cybersecurity, and AI, there is an increasing demand for skilled professionals.\n\nProblem-Solving and Critical Thinking: Learning Computer Science enhances your ability to approach problems logically and solve them efficiently. It encourages critical thinking, pattern recognition, and creativity.\n\nInnovation and Future-Proofing: With technology constantly evolving, understanding Computer Science positions you for future innovations in fields like quantum computing, AI, and blockchain." },
-                { slug: "how-to-start", title: "How to Start Your Journey", content: "If you’re a complete beginner, don’t worry! Here’s how you can get started:\n\n1.  **Pick a Programming Language**: Start with Python, which is simple, easy to understand, and powerful enough for advanced topics. Numerous online platforms like Codecademy, freeCodeCamp, and Coursera offer free resources to learn programming.\n2.  **Practice Problem-Solving**: Websites like LeetCode and HackerRank provide practice problems that help you improve your algorithmic thinking and coding skills.\n3.  **Build Small Projects**: Apply what you’ve learned by building simple projects. Start with things like a calculator, a to-do list, or a personal blog. These projects will give you hands-on experience and make abstract concepts concrete.\n4.  **Explore Advanced Topics**: Once you’re comfortable with the basics, dive into more advanced topics like data structures, algorithms, and AI. Participate in open-source projects and collaborate with others to grow your skills." }
+                { slug: "why-learn-cs", title: "Why Learn Computer Science?", type: "content", content: "Versatility and Career Opportunities: Computer Science is a gateway to a wide range of careers. From software development to data science, cybersecurity, and AI, there is an increasing demand for skilled professionals.\n\nProblem-Solving and Critical Thinking: Learning Computer Science enhances your ability to approach problems logically and solve them efficiently. It encourages critical thinking, pattern recognition, and creativity.\n\nInnovation and Future-Proofing: With technology constantly evolving, understanding Computer Science positions you for future innovations in fields like quantum computing, AI, and blockchain." },
+                { slug: "how-to-start", title: "How to Start Your Journey", type: "content", content: "If you’re a complete beginner, don’t worry! Here’s how you can get started:\n\n1.  **Pick a Programming Language**: Start with Python, which is simple, easy to understand, and powerful enough for advanced topics. Numerous online platforms like Codecademy, freeCodeCamp, and Coursera offer free resources to learn programming.\n2.  **Practice Problem-Solving**: Websites like LeetCode and HackerRank provide practice problems that help you improve your algorithmic thinking and coding skills.\n3.  **Build Small Projects**: Apply what you’ve learned by building simple projects. Start with things like a calculator, a to-do list, or a personal blog. These projects will give you hands-on experience and make abstract concepts concrete.\n4.  **Explore Advanced Topics**: Once you’re comfortable with the basics, dive into more advanced topics like data structures, algorithms, and AI. Participate in open-source projects and collaborate with others to grow your skills." }
+            ]
+        }
+    ]
+  },
+  {
+    slug: 'web-dev-guide',
+    title: 'The Ultimate Guide to Website Development with Coding',
+    description: 'A complete guide covering everything from front-end and back-end development to full-stack technologies, security best practices, and performance optimization.',
+    level: 'Intermediate',
+    primaryCategory: 'Software Development',
+    suggestedTags: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'],
+    image: placeholderImages.course15.src,
+    rating: 5,
+    students: 0,
+    comments: 0,
+    author: 'Prerana',
+    isTopCourse: false,
+    syllabus: [
+        {
+            title: "Module 1: Front-End Development",
+            lessons: [
+                { 
+                    slug: "frontend-intro", 
+                    title: "Introduction to Front-End", 
+                    type: "content",
+                    content: `Front-end development focuses on the visual and interactive aspects of a website that users see and engage with. It's all about creating a great user experience.
+
+**Key Components:**
+*   **HTML (HyperText Markup Language):** The backbone of web pages, defining structure and content. It provides essential elements such as headings, paragraphs, lists, and links.
+*   **CSS (Cascading Style Sheets):** Used for styling elements like colors, fonts, and layouts. CSS makes websites visually appealing and responsive.
+*   **JavaScript:** Adds interactivity, animations, and dynamic content to web pages, enabling user-friendly and engaging web applications.
+*   **TypeScript:** A superset of JavaScript that provides static typing, making it easier to manage large-scale applications.`
+                },
+                {
+                    slug: "frontend-frameworks", 
+                    title: "Frameworks & Libraries", 
+                    type: "content",
+                    content: `Frameworks and libraries provide pre-written code to help you build applications faster.
+
+*   **Bootstrap:** A responsive CSS framework for fast and mobile-friendly development.
+*   **Tailwind CSS:** A utility-first CSS framework for flexible styling.
+*   **React.js:** A JavaScript library for building interactive UIs with reusable components.
+*   **Vue.js:** A progressive framework for developing user interfaces efficiently.
+*   **Next.js:** A React framework that enables server-side rendering for better performance and SEO.`
+                },
+                {
+                    slug: "responsive-design",
+                    title: "Responsive Design",
+                    type: "content",
+                    content: `Responsive design ensures your website looks great on all devices.
+
+*   **Media Queries:** Adapting layouts based on screen size.
+*   **Flexbox:** A layout model for aligning elements dynamically.
+*   **Grid Layout:** A powerful system for designing structured web pages.`
+                },
+                {
+                    slug: "frontend-tips",
+                    title: "5 Tips for Effective Front-End Development",
+                    type: "content",
+                    content: `1. Keep your code clean and well-structured.
+2. Use browser developer tools to debug and optimize.
+3. Follow accessibility guidelines (WCAG).
+4. Test across different devices and browsers.
+5. Minimize HTTP requests by combining files.`
+                }
+            ]
+        },
+        {
+            title: "Module 2: Back-End Development",
+            lessons: [
+                {
+                    slug: "backend-intro",
+                    title: "Introduction to Back-End",
+                    type: "content",
+                    content: `Back-end development powers the functionality of a website, managing data, logic, and security.
+
+**Programming Languages:**
+*   **Python (Django, Flask):** For robust and scalable web applications.
+*   **PHP:** A server-side scripting language for dynamic websites.
+*   **Node.js:** A runtime environment for executing JavaScript on the server.
+*   **Ruby on Rails:** A web application framework for rapid development.`
+                },
+                {
+                    slug: "databases",
+                    title: "Databases",
+                    type: "content",
+                    content: `Databases are used to store and manage data.
+
+*   **MySQL:** A widely used relational database.
+*   **PostgreSQL:** A powerful, open-source relational database.
+*   **MongoDB:** A NoSQL database for flexible, JSON-like documents.
+*   **Firebase:** A real-time database by Google for cloud-based storage.`
+                },
+                {
+                    slug: "api-development",
+                    title: "API Development",
+                    type: "content",
+                    content: `APIs allow different applications to communicate with each other.
+
+*   **RESTful APIs:** Standard APIs for communication between client and server.
+*   **GraphQL:** A query language for efficient data retrieval.
+*   **API Security:** Implementing token-based authentication and rate limiting.`
+                },
+                {
+                    slug: "backend-tips",
+                    title: "5 Tips for Efficient Back-End Development",
+                    type: "content",
+                    content: `1. Write modular and reusable code.
+2. Optimize database queries for performance.
+3. Implement error handling and logging.
+4. Keep authentication and authorization secure.
+5. Regularly update dependencies.`
+                }
+            ]
+        },
+        {
+            title: "Module 3: Full-Stack Development",
+            lessons: [
+                {
+                    slug: "fullstack-intro",
+                    title: "What is Full-Stack?",
+                    type: "content",
+                    content: `Full-stack developers handle both front-end and back-end development, creating complete web applications.
+
+**Popular Stacks:**
+*   **MERN Stack:** MongoDB, Express.js, React, Node.js.
+*   **LAMP Stack:** Linux, Apache, MySQL, PHP.
+*   **MEVN Stack:** MongoDB, Express.js, Vue.js, Node.js.
+*   **Django & Flask Stack:** Python-based frameworks.`
+                },
+                {
+                    slug: "fullstack-tips",
+                    title: "5 Tips for Successful Full-Stack Development",
+                    type: "content",
+                    content: `1. Keep front-end and back-end components loosely coupled.
+2. Use version control systems like Git.
+3. Follow best practices for API design.
+4. Implement server-side rendering (SSR) for better SEO.
+5. Use automated testing to ensure code quality.`
+                }
+            ]
+        },
+        {
+            title: "Module 4: Security & Optimization",
+            lessons: [
+                {
+                    slug: "web-security",
+                    title: "Website Security Best Practices",
+                    type: "content",
+                    content: `*   **SSL (Secure Socket Layer):** Encrypts data between the user and the server.
+*   **Authentication:** Implementing user authentication systems (OAuth, JWT).
+*   **SQL Injection Prevention:** Protecting against database attacks.
+*   **Web Application Firewall (WAF):** Protects websites from malicious traffic.`
+                },
+                {
+                    slug: "performance-optimization",
+                    title: "Performance Optimization Techniques",
+                    type: "content",
+                    content: `*   **Caching:** Storing frequently accessed data for faster loading.
+*   **Lazy Loading:** Loading images and resources only when needed.
+*   **Image Optimization:** Compressing images to improve page speed.
+*   **Content Delivery Network (CDN):** Distributes website content across multiple servers for faster load times.`
+                },
+                 {
+                    slug: "security-tips",
+                    title: "5 Tips for Web Security & Optimization",
+                    type: "content",
+                    content: `1. Use HTTPS to secure user data.
+2. Optimize images and minify CSS/JavaScript.
+3. Regularly update software and plugins.
+4. Set up automated backups.
+5. Implement content delivery networks (CDNs).`
+                }
             ]
         }
     ]

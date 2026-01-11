@@ -14,6 +14,7 @@
     "course12": { "src": "https://picsum.photos/seed/course12/500/300", "hint": "javascript code" },
     "course13": { "src": "https://picsum.photos/seed/course13/500/300", "hint": "python data science" },
     "course14": { "src": "https://picsum.photos/seed/course14/500/300", "hint": "computer science basics" },
+    "course15": { "src": "https://picsum.photos/seed/course15/500/300", "hint": "website code" },
     "homeHero1": { "src": "https://i.postimg.cc/xTdhgwQw/digital-art-ai-technology-background.jpg", "hint": "career roadmap" },
     "homeHero2": { "src": "https://i.postimg.cc/pd6GyT4f/download.jpg", "hint": "futuristic vr" },
     "homeHero3": { "src": "https://i.postimg.cc/DZ06TTzy/futurism-perspective-digital-nomads-lifestyle-23-2151252436.jpg", "hint": "digital nomad" },
