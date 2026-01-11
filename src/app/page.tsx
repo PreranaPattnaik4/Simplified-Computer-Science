@@ -292,9 +292,6 @@ export default function HomePage() {
             <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Enhance your problem-solving skills</li>
             <li className="flex items-center gap-2"><Lightbulb className="h-5 w-5 text-accent" /> Earn certificates & grow your network</li>
           </ul>
-          <button className="mt-8 rounded-full bg-accent px-12 py-4 text-lg font-bold text-accent-foreground transition-transform hover:scale-105">
-            HACKATHONS
-          </button>
         </section>
 
         {/* Section 8: "What We Offer" Grid */}
@@ -378,5 +375,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-    
