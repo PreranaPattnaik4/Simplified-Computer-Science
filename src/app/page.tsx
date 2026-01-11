@@ -126,7 +126,7 @@ export default function HomePage() {
     <div className="bg-background text-foreground">
       <main>
         {/* New Hero Section */}
-        <section className="bg-background py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <section className="bg-background pt-8 pb-16 md:pt-12 md:pb-24 px-4 sm:px-6 lg:px-8">
             <div className="container mx-auto max-w-7xl">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="relative aspect-square">
@@ -378,3 +378,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+    
