@@ -314,7 +314,7 @@ We recommend using the Anaconda distribution, which packages Python with essenti
 3.  Verify your installation by running \`python --version\` and \`conda list\` in your terminal.
 <br/>
 ### Tip
-Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and a"
+Use virtual environments (like \`conda create --name myenv python=3.8\`) to manage dependencies for different projects and a`
                 },
                 { 
                     type: 'content',
@@ -362,7 +362,7 @@ total_ratings = 100 # assuming 100 ratings before
 current_total = rating * total_ratings
 new_average = (current_total + new_rating) / (total_ratings + 1)
 print(f"New average rating: {new_average}")
-\`\`\`` 
+\`\`\``
                 },
                 { 
                     type: 'content',
