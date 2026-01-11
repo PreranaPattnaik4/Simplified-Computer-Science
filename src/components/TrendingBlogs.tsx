@@ -17,18 +17,18 @@ export default function TrendingBlogs() {
     },
     {
       author: "Prerana",
+      categories: ["Interview Tips", "Career"],
+      date: "July 1, 2024",
+      title: "20 Essential Tips to Ace Corporate Interviews in 2025",
+      description: "Corporate interviews are a crucial step in securing your dream job. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.",
+      link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025",
+    },
+    {
+      author: "Prerana",
       categories: ["Artificial Intelligence", "Futures Tech", "Insight blogs"],
       date: "May 23, 2023",
       title: "Understanding Artificial Intelligence: A Beginner's Guide to AI | Simplified Computer Science",
       description: "Edit Content Click on the Edit Content button to edit/add the content. Introduction Artificial Intelligence (AI) has become a buzzword…",
-      link: "#",
-    },
-    {
-      author: "Prerana",
-      categories: ["Artificial Intelligence", "PROJECTS TIPS"],
-      date: "May 23, 2023",
-      title: "AI Artistry Unleashed: A Curated Collection of My Prompt-Generated Creations",
-      description: "In the world of digital art, AI is transforming how we create. Through my collection, “AI Artistry Unleashed,” I’m…",
       link: "#",
     },
     

@@ -11,6 +11,13 @@ const blogPosts = [
     link: '/blog/career-tips-for-tech-professionals',
   },
   {
+    category: 'Interview Tips, Career',
+    title: '20 Essential Tips to Ace Corporate Interviews in 2025',
+    date: '1 July 2024',
+    description: 'Corporate interviews are a crucial step in securing your dream job. Whether you are a fresher or an experienced professional, mastering the interview process is key to standing out among other candidates. As we step into 2025, the job market continues to evolve, making it even more important to stay ahead of the curve.',
+    link: '/blog/20-essential-tips-to-ace-corporate-interviews-in-2025',
+  },
+  {
     category: 'Python',
     title: '100 Essential Python Questions & Answers: Your Ultimate Beginner’s Guide to Mastering Python',
     date: '10 February 2025',
@@ -48,6 +55,7 @@ const blogPosts = [
 ];
 
 const recentPosts = [
+    { title: "20 Essential Tips to Ace Corporate Interviews...", date: "1 July 2024", comments: 0, link: "/blog/20-essential-tips-to-ace-corporate-interviews-in-2025" },
     { title: "Career Tips for Tech Professionals...", date: "5 June 2024", comments: 0, link: "/blog/career-tips-for-tech-professionals" },
     { title: "100 Essential Python Questions & Answers...", date: "10 February 2025", comments: 0, link: "#" },
     { title: "Private: post templates", date: "30 December 2024", comments: 0, link: "#" },
